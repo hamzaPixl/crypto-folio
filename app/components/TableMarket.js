@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint react/no-did-mount-set-state: 0 */
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import theme from '../config/theme';
 
@@ -6,6 +7,7 @@ import FormattedCurrency from './FormattedCurrency';
 import FormattedPercentage from './FormattedPercentage';
 
 import wallet from '../config/wallet';
+import searchInformation from '../infrastructure/searchInformation';
 
 const Container = styled.div`
   padding-top: 2%;
@@ -42,13 +44,33 @@ const CoinName = styled.div`
   padding-top: 3px;
 `;
 
-function TableMarket() {
-  return (
-    <Container>
-      <TableContainer>
-        <tbody>
-          {
-            wallet.map((coin) => {
+class TableMarket extends Component {
+  constructor() {
+    super();
+    this.state = {
+      coins: wallet,
+    };
+  }
+
+  componentDidMount() {
+    setInterval(
+      () => {
+        searchInformation(this.state.coins)
+          .then(coins => this.setState({ coins }));
+      },
+      120000,
+    );
+  }
+
+  render() {
+    return (
+      <Container>
+        <TableContainer>
+          <tbody>
+            {
+            this.state.coins.map((coin) => {
+              const change24 = coin.percent_change_24h / 100;
+              const percentageClass = coin.percent_change_24h < 0 ? 'negative' : 'positive';
               return (
                 <tr key={coin.name}>
                   <td>
@@ -58,19 +80,20 @@ function TableMarket() {
                     </CoinContainer>
                   </td>
                   <td>
-                    <FormattedCurrency value={1400} />
+                    <FormattedCurrency value={coin.price_usd} />
                   </td>
                   <td>
-                    <FormattedPercentage value={11} class="positive" />
+                    <FormattedPercentage value={change24} class={percentageClass} />
                   </td>
                 </tr>
               );
             })
           }
-        </tbody>
-      </TableContainer>
-    </Container>
-  );
+          </tbody>
+        </TableContainer>
+      </Container>
+    );
+  }
 }
 
 export default TableMarket;
