@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as Icon from 'react-cryptocoins';
 import theme from '../config/theme';
+
 import FormattedCurrency from './FormattedCurrency';
 import FormattedPercentage from './FormattedPercentage';
+
+import wallet from '../config/wallet';
 
 const Container = styled.div`
   padding-top: 2%;
@@ -13,6 +15,7 @@ const Container = styled.div`
 
 const TableContainer = styled.table`
   width: 300px;
+  border-radius: 4px;
   font-family: ${theme.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
   color: ${theme.primaryColor};
@@ -35,7 +38,8 @@ const CoinLogo = styled.div`
 `;
 
 const CoinName = styled.div`
-  padding-left: 5px;
+  padding-left: 10px;
+  padding-top: 3px;
 `;
 
 function TableMarket() {
@@ -43,20 +47,26 @@ function TableMarket() {
     <Container>
       <TableContainer>
         <tbody>
-          <tr>
-            <td>
-              <CoinContainer>
-                <CoinLogo><Icon.Eth /></CoinLogo>
-                <CoinName>ETH</CoinName>
-              </CoinContainer>
-            </td>
-            <td>
-              <FormattedCurrency value={1400} />
-            </td>
-            <td>
-              <FormattedPercentage value={100} class="positive" />
-            </td>
-          </tr>
+          {
+            wallet.map((coin) => {
+              return (
+                <tr key={coin.name}>
+                  <td>
+                    <CoinContainer>
+                      <CoinLogo>{coin.icon}</CoinLogo>
+                      <CoinName>{coin.symbol}</CoinName>
+                    </CoinContainer>
+                  </td>
+                  <td>
+                    <FormattedCurrency value={1400} />
+                  </td>
+                  <td>
+                    <FormattedPercentage value={11} class="positive" />
+                  </td>
+                </tr>
+              );
+            })
+          }
         </tbody>
       </TableContainer>
     </Container>
