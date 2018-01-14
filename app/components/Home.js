@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from '../config/theme';
 
+import logo from '../assets/images/logo.svg';
 import TableMarket from './TableMarket';
 
 const Title = styled.h1`
@@ -16,12 +17,18 @@ const Title = styled.h1`
 
 const Container = styled.div`
   padding-top: 2%;
+  text-align: center;
+`;
+
+const Logo = styled.img`
+  width: 100px;
 `;
 
 const App = () => {
   return (
     <Container>
-      <Title>Crypto Folio</Title>
+      <Logo src={logo} alt="" />
+      <Title>CRYPTO FOLIO.</Title>
       <TableMarket />
     </Container>
   );
