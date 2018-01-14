@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import { IntlProvider } from 'react-intl';
 
 import Root from './config/Root';
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
+    <IntlProvider locale="en">
+      <AppContainer>
+        <Component />
+      </AppContainer>
+    </IntlProvider>,
     document.getElementById('root'),
   );
 };
