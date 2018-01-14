@@ -18,8 +18,9 @@ function FormattedPercent(props) {
   return (
     <Container class={props.class}>
       <FormattedNumber
+        maximumFractionDigits={2}
         style="percent"
-        value={props.value}
+        value={Math.abs(props.value)}
       />
       <img src={arrow} alt="" />
     </Container>
