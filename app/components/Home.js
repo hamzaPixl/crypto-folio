@@ -4,6 +4,7 @@ import theme from '../config/theme';
 
 import logo from '../assets/images/logo.svg';
 import TableMarket from './TableMarket';
+import Trend from './Trend';
 
 const Title = styled.h1`
   font-family: ${theme.fontFamily}, sans-serif;
@@ -29,6 +30,7 @@ const App = () => {
     <Container>
       <Logo src={logo} alt="" />
       <Title>CRYPTO FOLIO.</Title>
+      <Trend />
       <TableMarket />
     </Container>
   );
