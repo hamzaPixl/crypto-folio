@@ -7,6 +7,7 @@ import TableMarket from './TableMarket';
 import Trend from './Trend';
 
 const Title = styled.h1`
+  margin-top: 0;
   font-family: ${theme.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
   color: ${theme.primaryColor};

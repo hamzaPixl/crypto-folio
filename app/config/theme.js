@@ -7,7 +7,7 @@ const Default = {
   fontWeight: 300,
   lineHeight: 2,
   letterSpacing: 0.01,
-  titleSize: 20,
+  titleSize: 15,
   coinColor: 'white',
   changePositive: '#00c853',
   changeNegative: '#f44336',

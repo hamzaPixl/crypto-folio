@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const config = {
   devtool: 'cheap-module-source-map',
@@ -22,6 +23,7 @@ const config = {
 
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new FaviconsWebpackPlugin('./assets/images/logo.png'),
     new HtmlWebpackPlugin({
       template: `${__dirname}/app/index.html`,
       filename: 'index.html',

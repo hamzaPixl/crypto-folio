@@ -1,9 +1,11 @@
 const { resolve } = require('path');
 
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const config = {
   devtool: 'cheap-module-eval-source-map',
@@ -129,6 +131,7 @@ const config = {
   },
 
   plugins: [
+    new FaviconsWebpackPlugin('./assets/images/logo.png'),
     new webpack.LoaderOptionsPlugin({
       test: /\.js$/,
       options: {
@@ -137,6 +140,11 @@ const config = {
           cache: false,
         },
       },
+    }),
+    new HtmlWebpackPlugin({
+      template: `${__dirname}/app/index.html`,
+      filename: 'index.html',
+      inject: 'body',
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new ExtractTextPlugin({ filename: './styles/style.css', disable: false, allChunks: true }),
