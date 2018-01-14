@@ -58,7 +58,6 @@ const Wallet = [
     icon: <img width="30px" src={CND} alt="CND" />,
     link: 'https://api.coinmarketcap.com/v1/ticker/cindicator/',
   },
-
 ];
 
 export default Wallet;

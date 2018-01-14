@@ -58,7 +58,7 @@ class TableMarket extends Component {
         searchInformation(this.state.coins)
           .then(coins => this.setState({ coins }));
       },
-      120000,
+      1000,
     );
   }
 

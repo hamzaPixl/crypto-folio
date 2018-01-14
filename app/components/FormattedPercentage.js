@@ -10,6 +10,7 @@ import ArrowDown from '../assets/icons/arrow_down.svg';
 
 const Container = styled.div`
   display: flex;
+  justify-content: flex-end;
   color: ${props => (props.class === 'negative' ? theme.changeNegative : theme.changePositive)};
 `;
 
