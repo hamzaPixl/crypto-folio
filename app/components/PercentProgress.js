@@ -8,11 +8,14 @@ import theme from '../config/theme';
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  width: 200px;
-  height: 150px;
-  padding-top: 20px;
   div > div {
     display: none;
+  }
+  > div > svg {
+    stroke-linecap: round;
+    > path:first-child {
+      stroke: ${theme.backgroundColorTable};
+    }
   }
 `;
 
