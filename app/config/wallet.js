@@ -15,6 +15,7 @@ const Wallet = [
     symbol: 'ETH',
     icon: <img src={ETH} alt="ETH" />,
     link: 'https://api.coinmarketcap.com/v1/ticker/ethereum/',
+    color: '#',
   },
   {
     hodl: 100.649,
@@ -22,6 +23,7 @@ const Wallet = [
     symbol: 'XRP',
     icon: <img src={XRP} alt="XRP" />,
     link: 'https://api.coinmarketcap.com/v1/ticker/ripple/',
+    color: '#',
   },
   {
     hodl: 74.915,
@@ -29,6 +31,7 @@ const Wallet = [
     symbol: 'XLM',
     icon: <img src={XLM} alt="XLM" />,
     link: 'https://api.coinmarketcap.com/v1/ticker/stellar/',
+    color: '#',
   },
   {
     hodl: 291.104,
@@ -36,6 +39,7 @@ const Wallet = [
     symbol: 'TRX',
     icon: <img src={TRX} alt="TRX" />,
     link: 'https://api.coinmarketcap.com/v1/ticker/tron/',
+    color: '#',
   },
   {
     hodl: 300.24918,
@@ -43,6 +47,7 @@ const Wallet = [
     symbol: 'XVG',
     icon: <img src={XVG} alt="XVG" />,
     link: 'https://api.coinmarketcap.com/v1/ticker/verge/',
+    color: '#',
   },
   {
     hodl: 24.975,
@@ -50,6 +55,7 @@ const Wallet = [
     symbol: 'ADA',
     icon: <img src={ADA} alt="ADA" />,
     link: 'https://api.coinmarketcap.com/v1/ticker/cardano/',
+    color: '#',
   },
   {
     hodl: 70.846,
@@ -57,6 +63,7 @@ const Wallet = [
     symbol: 'CND',
     icon: <img width="30px" src={CND} alt="CND" />,
     link: 'https://api.coinmarketcap.com/v1/ticker/cindicator/',
+    color: '#',
   },
 ];
 

@@ -1,4 +1,6 @@
 /* eslint react/no-did-mount-set-state: 0 */
+/* eslint react/forbid-prop-types: 0 */
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import theme from '../config/theme';
@@ -6,8 +8,6 @@ import theme from '../config/theme';
 import FormattedCurrency from './FormattedCurrency';
 import FormattedPercentage from './FormattedPercentage';
 
-import wallet from '../config/wallet';
-import searchInformation from '../infrastructure/searchInformation';
 
 const Container = styled.div`
   padding-top: 2%;
@@ -45,21 +45,11 @@ const CoinName = styled.div`
 `;
 
 class TableMarket extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      coins: wallet,
+      coins: props.coins,
     };
-  }
-
-  componentDidMount() {
-    setInterval(
-      () => {
-        searchInformation(this.state.coins)
-          .then(coins => this.setState({ coins }));
-      },
-      1000,
-    );
   }
 
   render() {
@@ -95,5 +85,13 @@ class TableMarket extends Component {
     );
   }
 }
+
+TableMarket.propTypes = {
+  coins: PropTypes.array,
+};
+
+TableMarket.defaultProps = {
+  coins: [],
+};
 
 export default TableMarket;
