@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import theme from '../config/theme';
 
-import TablePortfolio from './TablePortfolio';
 import TableMarket from './TableMarket';
 import Trend from './Trend';
 import wallet from '../config/wallet';
@@ -56,7 +55,6 @@ class Home extends Component {
         <Title>Cf<div>.</div></Title>
         <Trend />
         <ContentContainer>
-          <TablePortfolio coins={this.state.coins} />
           <TableMarket coins={this.state.coins} />
         </ContentContainer>
       </Container>

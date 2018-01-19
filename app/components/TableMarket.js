@@ -16,7 +16,9 @@ const Container = styled.div`
 `;
 
 const TableContainer = styled.table`
-  width: 300px;
+  width: 405px;
+  text-align: left;
+  height: 500px;
   border-radius: 4px;
   font-family: ${theme.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;

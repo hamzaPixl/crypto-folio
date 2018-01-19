@@ -16,7 +16,8 @@ const Container = styled.div`
 `;
 
 const TableContainer = styled.table`
-  width: 300px;
+  width: 405px;
+  height: 500px;
   text-align: left;
   border-spacing: 5px;
   border-radius: 4px;
@@ -35,7 +36,18 @@ const TableContainer = styled.table`
 
 const CoinContainer = styled.div`
   display: flex;
+  padding-left: 20px;
+  padding-top: 5px;
+`;
+
+const CoinLogo = styled.div`
+  color: ${theme.coinColor};
+  padding-top: 3px;
+`;
+
+const CoinName = styled.div`
   padding-left: 10px;
+  padding-top: 3px;
 `;
 
 function TablePortfolio(props) {
@@ -51,7 +63,8 @@ function TablePortfolio(props) {
                 <tr key={coin.name}>
                   <td>
                     <CoinContainer>
-                      {coin.symbol}
+                      <CoinLogo>{coin.icon}</CoinLogo>
+                      <CoinName>{coin.symbol}</CoinName>
                     </CoinContainer>
                   </td>
                   <td>
