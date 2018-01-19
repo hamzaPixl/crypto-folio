@@ -18,7 +18,7 @@ const dark = {
 
 const light = {
   primaryColor: '#212121',
-  backgroundColor: '#cfd8dc',
+  backgroundColor: '#eeeeee',
   ...basic,
 };
 
