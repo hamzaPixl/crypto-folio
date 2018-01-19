@@ -41,6 +41,11 @@ class Home extends Component {
     };
   }
 
+  componentWillMount() {
+    searchInformation(this.state.coins)
+      .then(coins => this.setState({ coins }));
+  }
+
   componentDidMount() {
     setInterval(
       () => searchInformation(this.state.coins)

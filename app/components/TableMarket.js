@@ -8,7 +8,6 @@ import theme from '../config/theme';
 import FormattedCurrency from './FormattedCurrency';
 import FormattedPercentage from './FormattedPercentage';
 
-
 const Container = styled.div`
   padding-top: 2%;
   display: flex;
