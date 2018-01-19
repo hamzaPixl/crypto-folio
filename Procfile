@@ -1,1 +1,1 @@
-web: webpack-dev-server
+web: npm run start
