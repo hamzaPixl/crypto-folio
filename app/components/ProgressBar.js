@@ -13,7 +13,7 @@ const Bar = styled(LinearProgress)`
 `;
 
 const barStyle = {
-  backgroundColor: theme.dark.backgroundColor,
+  backgroundColor: theme.light.backgroundColor,
   width: '100px',
   height: '7px',
   borderRadius: '4px',
@@ -48,7 +48,7 @@ class ProgressBar extends React.Component {
   render() {
     return (
       <Bar
-        color={theme.dark.dotColor}
+        color={theme.light.dotColor}
         style={barStyle}
         mode="determinate"
         value={this.state.completed}

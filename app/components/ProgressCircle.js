@@ -43,7 +43,7 @@ class ProgressCircle extends React.Component {
     return (
       <Circle
         size={180}
-        color={theme.dark.dotColor}
+        color={theme.light.dotColor}
         thickness={5}
         mode="determinate"
         value={this.state.completed}

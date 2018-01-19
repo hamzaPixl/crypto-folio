@@ -11,15 +11,15 @@ const Title = styled.h1`
   display: flex;
   justify-content: center;
   margin-top: 5%;
-  font-family: ${theme.dark.fontFamily}, sans-serif;
+  font-family: ${theme.light.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: ${theme.dark.primaryColor};
-  font-size: ${theme.dark.titleSize}px;
-  line-height: ${theme.dark.lineHeight}rem;
-  letter-spacing: ${theme.dark.letterSpacing}rem;
+  color: ${theme.light.primaryColor};
+  font-size: ${theme.light.titleSize}px;
+  line-height: ${theme.light.lineHeight}rem;
+  letter-spacing: ${theme.light.letterSpacing}rem;
   text-align: center;
   > div {
-    color: ${theme.dark.dotColor};
+    color: ${theme.light.dotColor};
   }
 `;
 
@@ -50,7 +50,7 @@ class Home extends Component {
     setInterval(
       () => searchInformation(this.state.coins)
         .then(coins => this.setState({ coins })),
-      (1000 * 2),
+      (1000 * 10),
     );
   }
 

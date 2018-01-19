@@ -9,10 +9,11 @@ import theme from '../config/theme';
 
 const Container = styled.div`
   display: flex;
+  padding-top: 5%;
   align-items: center;
-  color: ${theme.dark.primaryColor};
+  color: ${theme.light.primaryColor};
   flex-direction: column;
-  font-family: ${theme.dark.fontFamily}, sans-serif;
+  font-family: ${theme.light.fontFamily}, sans-serif;
 `;
 
 const PriceUSD = styled.div`
