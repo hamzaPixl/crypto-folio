@@ -26,7 +26,7 @@ const TableContainer = styled.table`
   line-height: ${theme.lineHeight}rem;
   letter-spacing: ${theme.letterSpacing}rem;
   margin-bottom: 2rem;
-  background-color: ${theme.backgroundColorTable};
+  background-color: ${theme.backgroundColor};
 `;
 
 const CoinContainer = styled.div`
@@ -63,7 +63,7 @@ function TableMarket(props) {
                     </CoinContainer>
                   </td>
                   <td>
-                    <FormattedCurrency value={coin.price_usd} />
+                    <FormattedCurrency class={percentageClass} value={coin.price_usd} />
                   </td>
                   <td>
                     <FormattedPercentage value={change24} class={percentageClass} />

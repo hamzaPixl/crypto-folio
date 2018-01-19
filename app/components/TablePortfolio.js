@@ -28,7 +28,7 @@ const TableContainer = styled.table`
   line-height: ${theme.lineHeight}rem;
   letter-spacing: ${theme.letterSpacing}rem;
   margin-bottom: 2rem;
-  background-color: ${theme.backgroundColorTable};
+  background-color: ${theme.backgroundColor};
   td {
     padding-right: 15px;
   }
