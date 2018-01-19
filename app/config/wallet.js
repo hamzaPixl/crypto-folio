@@ -10,7 +10,7 @@ import XVG from '../assets/icons/coins/xvg.svg';
 
 const Wallet = [
   {
-    hodl: 0.30223045,
+    hodl: 0.40228577,
     name: 'Ethereum',
     symbol: 'ETH',
     icon: <img src={ETH} alt="ETH" />,
@@ -24,7 +24,7 @@ const Wallet = [
     link: 'https://api.coinmarketcap.com/v1/ticker/ripple/',
   },
   {
-    hodl: 74.915,
+    hodl: 100.879,
     name: 'Stellar',
     symbol: 'XLM',
     icon: <img src={XLM} alt="XLM" />,
@@ -45,7 +45,7 @@ const Wallet = [
     link: 'https://api.coinmarketcap.com/v1/ticker/verge/',
   },
   {
-    hodl: 24.975,
+    hodl: 40.959,
     name: 'Cardano',
     symbol: 'ADA',
     icon: <img src={ADA} alt="ADA" />,
