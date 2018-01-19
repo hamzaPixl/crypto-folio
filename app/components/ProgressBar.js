@@ -24,7 +24,6 @@ class ProgressBar extends React.Component {
     super(props);
     this.state = {
       completed: 0,
-      percent: props.percent,
     };
   }
 
@@ -37,8 +36,8 @@ class ProgressBar extends React.Component {
   }
 
   progress(completed) {
-    if (completed > this.state.percent) {
-      this.setState({ completed: this.state.percent });
+    if (completed > this.props.percent) {
+      this.setState({ completed: this.props.percent });
     } else {
       this.setState({ completed });
       const diff = Math.random() * 10;
