@@ -1,8 +1,7 @@
 const Default = {
   primaryColor: '#ffffff',
   borderColorTable: '#ffffff',
-  backgroundColor: '#000000',
-  backgroundColorTable: '#181819',
+  backgroundColor: '#181819',
   fontFamily: 'Roboto',
   fontWeight: 300,
   lineHeight: 2,
