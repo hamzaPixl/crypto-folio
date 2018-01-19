@@ -35,8 +35,13 @@ function FormattedPercent(props) {
 }
 
 FormattedPercent.propTypes = {
-  value: PropTypes.number.isRequired,
-  class: PropTypes.string.isRequired,
+  value: PropTypes.number,
+  class: PropTypes.string,
+};
+
+FormattedPercent.defaultProps = {
+  value: 0,
+  class: '',
 };
 
 export default FormattedPercent;

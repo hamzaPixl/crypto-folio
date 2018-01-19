@@ -58,7 +58,11 @@ class ProgressBar extends React.Component {
 }
 
 ProgressBar.propTypes = {
-  percent: PropTypes.number.isRequired,
+  percent: PropTypes.number,
+};
+
+ProgressBar.defaultProps = {
+  percent: 0,
 };
 
 export default ProgressBar;

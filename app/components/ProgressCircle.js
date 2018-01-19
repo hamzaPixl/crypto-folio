@@ -53,7 +53,11 @@ class ProgressCircle extends React.Component {
 }
 
 ProgressCircle.propTypes = {
-  percent: PropTypes.number.isRequired,
+  percent: PropTypes.number,
+};
+
+ProgressCircle.defaultProps = {
+  percent: 0,
 };
 
 export default ProgressCircle;

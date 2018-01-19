@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Carousel from 'nuka-carousel';
+
 import theme from '../config/theme';
+import wallet from '../config/wallet';
+import Trend from './Trend';
 
 import TableMarket from './TableMarket';
-import Trend from './Trend';
-import wallet from '../config/wallet';
+import TablePortfolio from './TablePortfolio';
+import ResumePortfolio from './ResumePortfolio';
 import searchInformation from '../infrastructure/searchInformation';
 
 const Title = styled.h1`
@@ -26,6 +30,9 @@ const Title = styled.h1`
 const Container = styled.div`
   padding-top: 2%;
   text-align: center;
+  div.slider-decorator-2,.slider-decorator-0,.slider-decorator-1{
+    display: none;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -38,20 +45,28 @@ class Home extends Component {
     super();
     this.state = {
       coins: wallet,
+      totalPrice: 0,
     };
   }
 
+
   componentWillMount() {
-    searchInformation(this.state.coins)
-      .then(coins => this.setState({ coins }));
+    this.fetchInformations();
   }
 
   componentDidMount() {
     setInterval(
-      () => searchInformation(this.state.coins)
-        .then(coins => this.setState({ coins })),
+      () => this.fetchInformations(),
       (1000 * 10),
     );
+  }
+
+  fetchInformations() {
+    return searchInformation(this.state.coins)
+      .then((coins) => {
+        this.setState({ coins });
+        this.setState({ totalPrice: coins.reduce((a, b) => (a + b.totalPrice), 0) });
+      });
   }
 
   render() {
@@ -60,7 +75,14 @@ class Home extends Component {
         <Title>Cf<div>.</div></Title>
         <Trend />
         <ContentContainer>
-          <TableMarket coins={this.state.coins} />
+          <Carousel
+            dragging
+            swiping
+          >
+            <TableMarket coins={this.state.coins} />
+            <TablePortfolio coins={this.state.coins} />
+            <ResumePortfolio totalPrice={this.state.totalPrice} />
+          </Carousel>
         </ContentContainer>
       </Container>
     );

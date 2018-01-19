@@ -30,8 +30,13 @@ function FormattedCurrency(props) {
 }
 
 FormattedCurrency.propTypes = {
-  value: PropTypes.number.isRequired,
-  class: PropTypes.string.isRequired,
+  value: PropTypes.number,
+  class: PropTypes.string,
+};
+
+FormattedCurrency.defaultProps = {
+  value: 0,
+  class: '',
 };
 
 export default FormattedCurrency;

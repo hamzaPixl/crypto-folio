@@ -15,7 +15,11 @@ function FormattedCoin(props) {
 }
 
 FormattedCoin.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number,
+};
+
+FormattedCoin.defaultProps = {
+  value: 0,
 };
 
 export default FormattedCoin;
