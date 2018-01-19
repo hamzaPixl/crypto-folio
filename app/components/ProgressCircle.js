@@ -1,25 +1,18 @@
 /* eslint react/style-prop-object: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import LinearProgress from 'material-ui/LinearProgress';
+import CircularProgress from 'material-ui/CircularProgress';
 import styled from 'styled-components';
 
 import theme from '../config/theme';
 
-const Bar = styled(LinearProgress)`
+const Circle = styled(CircularProgress)`
   > div {
     border-radius: 4px;
   }
 `;
 
-const barStyle = {
-  backgroundColor: theme.backgroundColorTable,
-  width: '180px',
-  height: '7px',
-  borderRadius: '4px',
-};
-
-class ProgressBar extends React.Component {
+class ProgressCircle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,9 +41,10 @@ class ProgressBar extends React.Component {
 
   render() {
     return (
-      <Bar
+      <Circle
+        size={80}
         color={theme.dotColor}
-        style={barStyle}
+        thickness={5}
         mode="determinate"
         value={this.state.completed}
       />
@@ -58,8 +52,8 @@ class ProgressBar extends React.Component {
   }
 }
 
-ProgressBar.propTypes = {
+ProgressCircle.propTypes = {
   percent: PropTypes.number.isRequired,
 };
 
-export default ProgressBar;
+export default ProgressCircle;
