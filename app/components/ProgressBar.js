@@ -14,7 +14,7 @@ const Bar = styled(LinearProgress)`
 
 const barStyle = {
   backgroundColor: theme.backgroundColorTable,
-  width: '180px',
+  width: '100px',
   height: '7px',
   borderRadius: '4px',
 };
