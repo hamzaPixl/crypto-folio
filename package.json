@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Manage your crypto wallet",
   "main": "index.js",
+  "engines" : { "node" : ">=8.9" },
   "scripts": {
     "start": "webpack-dev-server",
     "clean": "rimraf dist",
