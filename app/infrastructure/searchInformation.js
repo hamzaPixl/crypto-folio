@@ -11,7 +11,8 @@ function fetchInformationByCoin(coin) {
 }
 
 function fetchInformation(coins) {
-  return Promise.all(coins.map(fetchInformationByCoin));
+  return Promise.all(coins.map(fetchInformationByCoin))
+    .then(res => res.sort((a, b) => (b.totalPrice - a.totalPrice)));
 }
 
 export default fetchInformation;
