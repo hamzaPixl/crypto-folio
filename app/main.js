@@ -2,16 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { IntlProvider } from 'react-intl';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Root from './config/Root';
 
 const render = (Component) => {
   ReactDOM.render(
-    <IntlProvider locale="en">
-      <AppContainer>
-        <Component />
-      </AppContainer>
-    </IntlProvider>,
+    <MuiThemeProvider>
+      <IntlProvider locale="en">
+        <AppContainer>
+          <Component />
+        </AppContainer>
+      </IntlProvider>
+    </MuiThemeProvider>,
     document.getElementById('root'),
   );
 };
