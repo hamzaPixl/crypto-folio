@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import theme from '../config/theme';
 
+import TablePortfolio from './TablePortfolio';
 import TableMarket from './TableMarket';
 import Trend from './Trend';
 import wallet from '../config/wallet';
@@ -28,6 +29,11 @@ const Container = styled.div`
   text-align: center;
 `;
 
+const ContentContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
 class Home extends Component {
   constructor() {
     super();
@@ -49,7 +55,10 @@ class Home extends Component {
       <Container>
         <Title>Cf<div>.</div></Title>
         <Trend />
-        <TableMarket coins={this.state.coins} />
+        <ContentContainer>
+          <TablePortfolio coins={this.state.coins} />
+          <TableMarket coins={this.state.coins} />
+        </ContentContainer>
       </Container>
     );
   }
