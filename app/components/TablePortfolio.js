@@ -21,14 +21,14 @@ const TableContainer = styled.table`
   text-align: left;
   border-spacing: 5px;
   border-radius: 4px;
-  font-family: ${theme.fontFamily}, sans-serif;
+  font-family: ${theme.dark.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: ${theme.primaryColor};
+  color: ${theme.dark.primaryColor};
   font-size: 15px;
-  line-height: ${theme.lineHeight}rem;
-  letter-spacing: ${theme.letterSpacing}rem;
+  line-height: ${theme.dark.lineHeight}rem;
+  letter-spacing: ${theme.dark.letterSpacing}rem;
   margin-bottom: 2rem;
-  background-color: ${theme.backgroundColor};
+  background-color: ${theme.dark.backgroundColor};
   td {
     padding-right: 15px;
   }
@@ -41,7 +41,7 @@ const CoinContainer = styled.div`
 `;
 
 const CoinLogo = styled.div`
-  color: ${theme.coinColor};
+  color: ${theme.dark.coinColor};
   padding-top: 3px;
 `;
 

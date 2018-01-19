@@ -11,15 +11,15 @@ const Title = styled.h1`
   display: flex;
   justify-content: center;
   margin-top: 5%;
-  font-family: ${theme.fontFamily}, sans-serif;
+  font-family: ${theme.dark.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: ${theme.primaryColor};
-  font-size: ${theme.titleSize}px;
-  line-height: ${theme.lineHeight}rem;
-  letter-spacing: ${theme.letterSpacing}rem;
+  color: ${theme.dark.primaryColor};
+  font-size: ${theme.dark.titleSize}px;
+  line-height: ${theme.dark.lineHeight}rem;
+  letter-spacing: ${theme.dark.letterSpacing}rem;
   text-align: center;
   > div {
-    color: ${theme.dotColor};
+    color: ${theme.dark.dotColor};
   }
 `;
 
