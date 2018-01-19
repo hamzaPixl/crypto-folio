@@ -10,14 +10,20 @@ import ArrowDown from '../assets/icons/arrow_down.svg';
 
 const Container = styled.div`
   display: flex;
+  padding-right: 5px;
   justify-content: flex-end;
-  color: ${props => (props.class === 'negative' ? theme.changeNegative : theme.changePositive)};
+  &.negative {
+    color: ${theme.changeNegative};
+  }
+  &.positive {
+    color: ${theme.changePositive};
+  }
 `;
 
 function FormattedPercent(props) {
   const arrow = props.class === 'negative' ? ArrowDown : ArrowUp;
   return (
-    <Container class={props.class}>
+    <Container className={props.class}>
       <FormattedNumber
         maximumFractionDigits={2}
         style="percent"
