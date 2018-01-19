@@ -4,8 +4,8 @@ import theme from '../config/theme';
 
 import TableMarket from './TableMarket';
 import Trend from './Trend';
-import searchInformation from '../infrastructure/searchInformation';
 import wallet from '../config/wallet';
+import searchInformation from '../infrastructure/searchInformation';
 
 const Title = styled.h1`
   display: flex;
@@ -34,10 +34,13 @@ class Home extends Component {
     this.state = {
       coins: wallet,
     };
+  }
+
+  componentDidMount() {
     setInterval(
       () => searchInformation(this.state.coins)
         .then(coins => this.setState({ coins })),
-      (1000 * 1),
+      (1000 * 2),
     );
   }
 

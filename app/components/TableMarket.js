@@ -1,7 +1,7 @@
 /* eslint react/no-did-mount-set-state: 0 */
 /* eslint react/forbid-prop-types: 0 */
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import theme from '../config/theme';
 
@@ -44,21 +44,13 @@ const CoinName = styled.div`
   padding-top: 3px;
 `;
 
-class TableMarket extends Component {
-  constructor(props) {
-    super();
-    this.state = {
-      coins: props.coins,
-    };
-  }
-
-  render() {
-    return (
-      <Container>
-        <TableContainer>
-          <tbody>
-            {
-            this.state.coins.map((coin) => {
+function TableMarket(props) {
+  return (
+    <Container>
+      <TableContainer>
+        <tbody>
+          {
+            props.coins.map((coin) => {
               const change24 = coin.percent_change_24h / 100;
               const percentageClass = coin.percent_change_24h < 0 ? 'negative' : 'positive';
               return (
@@ -79,11 +71,10 @@ class TableMarket extends Component {
               );
             })
           }
-          </tbody>
-        </TableContainer>
-      </Container>
-    );
-  }
+        </tbody>
+      </TableContainer>
+    </Container>
+  );
 }
 
 TableMarket.propTypes = {
