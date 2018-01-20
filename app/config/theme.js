@@ -24,9 +24,7 @@ const light = {
   ...basic,
 };
 
-const theme = {
+export default {
   light,
   dark,
 };
-
-export default theme;
