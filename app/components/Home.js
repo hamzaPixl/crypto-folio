@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Carousel from 'nuka-carousel';
 
 import theme from '../config/theme';
-import wallet from '../config/wallet';
+import wallet from '../config/wallet/';
 import Trend from './Trend';
 
 import searchInformation from '../infrastructure/';
