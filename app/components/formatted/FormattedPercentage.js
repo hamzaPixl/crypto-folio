@@ -4,9 +4,9 @@ import React from 'react';
 import { FormattedNumber } from 'react-intl';
 import styled from 'styled-components';
 
-import theme from '../config/theme';
-import ArrowUp from '../assets/icons/arrow_up.svg';
-import ArrowDown from '../assets/icons/arrow_down.svg';
+import theme from '../../config/theme';
+import ArrowUp from '../../assets/icons/arrow_up.svg';
+import ArrowDown from '../../assets/icons/arrow_down.svg';
 
 const Container = styled.div`
   display: flex;

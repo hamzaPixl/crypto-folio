@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import FormattedCurrency from './FormattedCurrency';
-import ProgressCircle from './ProgressCircle';
-import theme from '../config/theme';
+import { FormattedCurrency } from '../formatted';
+import { ProgressCircle } from '../progress';
+import theme from '../../config/theme';
 
 const Container = styled.div`
   display: flex;

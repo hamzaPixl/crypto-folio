@@ -6,10 +6,8 @@ import theme from '../config/theme';
 import wallet from '../config/wallet';
 import Trend from './Trend';
 
-import TableMarket from './TableMarket';
-import TablePortfolio from './TablePortfolio';
-import ResumePortfolio from './ResumePortfolio';
-import searchInformation from '../infrastructure/searchInformation';
+import searchInformation from '../infrastructure/';
+import { ResumePortfolio, TableMarket, TablePortfolio } from './portfolio';
 
 const Title = styled.h1`
   display: flex;
@@ -49,7 +47,6 @@ class Home extends Component {
       totalPrice: 0,
     };
   }
-
 
   componentWillMount() {
     this.fetchInformations();

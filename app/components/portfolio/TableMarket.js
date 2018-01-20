@@ -3,11 +3,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../config/theme';
+import theme from '../../config/theme';
 
-import FormattedCurrency from './FormattedCurrency';
-import FormattedCoin from './FormattedCoin';
-import ProgressBar from './ProgressBar';
+import { FormattedPercentage, FormattedCurrency } from '../formatted';
 
 const Container = styled.div`
   padding-top: 2%;
@@ -17,9 +15,8 @@ const Container = styled.div`
 
 const TableContainer = styled.table`
   width: 405px;
-  height: 500px;
   text-align: left;
-  border-spacing: 5px;
+  height: 500px;
   border-radius: 4px;
   font-family: ${theme.light.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,9 +26,6 @@ const TableContainer = styled.table`
   letter-spacing: ${theme.light.letterSpacing}rem;
   margin-bottom: 2rem;
   background-color: ${theme.light.backgroundColor};
-  td {
-    padding-right: 15px;
-  }
 `;
 
 const CoinContainer = styled.div`
@@ -49,15 +43,16 @@ const CoinName = styled.div`
   padding-top: 3px;
 `;
 
-function TablePortfolio(props) {
-  const totalPrice = props.coins.reduce((a, b) => (a + b.totalPrice), 0);
+function TableMarket(props) {
   return (
     <Container>
       <TableContainer>
         <tbody>
           {
             props.coins.map((coin) => {
-              const percent = Math.round((coin.totalPrice / totalPrice) * 100);
+              const price = parseInt(coin.price_usd, 10);
+              const change24 = coin.percent_change_24h / 100;
+              const percentageClass = coin.percent_change_24h < 0 ? 'negative' : 'positive';
               return (
                 <tr key={coin.name}>
                   <td>
@@ -67,13 +62,10 @@ function TablePortfolio(props) {
                     </CoinContainer>
                   </td>
                   <td>
-                    <FormattedCurrency value={coin.totalPrice} />
+                    <FormattedCurrency class={percentageClass} value={price} />
                   </td>
                   <td>
-                    <FormattedCoin value={coin.totalBTC} />
-                  </td>
-                  <td>
-                    <ProgressBar percent={percent} />
+                    <FormattedPercentage value={change24} class={percentageClass} />
                   </td>
                 </tr>
               );
@@ -85,12 +77,12 @@ function TablePortfolio(props) {
   );
 }
 
-TablePortfolio.propTypes = {
+TableMarket.propTypes = {
   coins: PropTypes.array,
 };
 
-TablePortfolio.defaultProps = {
+TableMarket.defaultProps = {
   coins: [],
 };
 
-export default TablePortfolio;
+export default TableMarket;
