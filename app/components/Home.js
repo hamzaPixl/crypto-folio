@@ -55,15 +55,14 @@ class Home extends Component {
   componentDidMount() {
     setInterval(
       () => this.fetchInformations(),
-      (1000 * 10),
+      (1000 * 1),
     );
   }
 
   fetchInformations() {
     return searchInformation(this.state.coins)
       .then((coins) => {
-        this.setState({ coins });
-        this.setState({ totalPrice: coins.reduce((a, b) => (a + b.totalPrice), 0) });
+        this.setState({ coins, totalPrice: coins.reduce((a, b) => (a + b.totalPrice), 0) });
       });
   }
 
