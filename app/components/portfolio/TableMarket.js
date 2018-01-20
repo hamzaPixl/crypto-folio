@@ -3,7 +3,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../../config/theme';
+import theme from '../../utils/theme';
 
 import { FormattedPercentage, FormattedCurrency } from '../formatted';
 

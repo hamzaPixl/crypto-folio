@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import CircularProgress from 'material-ui/CircularProgress';
 import styled from 'styled-components';
 
-import theme from '../../config/theme';
+import theme from '../../utils/theme';
 
 const Circle = styled(CircularProgress)`
   > div {

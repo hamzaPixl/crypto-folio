@@ -4,7 +4,7 @@ import React from 'react';
 import { FormattedNumber } from 'react-intl';
 import styled from 'styled-components';
 
-import theme from '../../config/theme';
+import theme from '../../utils/theme';
 
 const Container = styled.div`
   &.negative {

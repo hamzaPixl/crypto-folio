@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import LinearProgress from 'material-ui/LinearProgress';
 import styled from 'styled-components';
 
-import theme from '../../config/theme';
+import theme from '../../utils/theme';
 
 const Bar = styled(LinearProgress)`
   > div {

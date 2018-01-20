@@ -4,7 +4,7 @@ import React from 'react';
 import { FormattedNumber } from 'react-intl';
 import styled from 'styled-components';
 
-import theme from '../../config/theme';
+import theme from '../../utils/theme';
 import ArrowUp from '../../assets/icons/arrow_up.svg';
 import ArrowDown from '../../assets/icons/arrow_down.svg';
 

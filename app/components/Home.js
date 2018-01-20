@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Carousel from 'nuka-carousel';
 
-import theme from '../config/theme';
+import theme from '../utils/theme';
 import wallet from '../config/wallet/';
 import Trend from './Trend';
 

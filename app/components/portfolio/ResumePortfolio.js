@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { FormattedCurrency } from '../formatted';
 import { ProgressCircle } from '../progress';
-import theme from '../../config/theme';
+import theme from '../../utils/theme';
 
 const Container = styled.div`
   display: flex;
