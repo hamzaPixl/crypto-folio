@@ -11,12 +11,14 @@ const basic = {
 };
 
 const dark = {
+  bodyColor: '#000000',
   primaryColor: '#ffffff',
   backgroundColor: '#181819',
   ...basic,
 };
 
 const light = {
+  bodyColor: '#ffffff',
   primaryColor: '#212121',
   backgroundColor: '#eeeeee',
   ...basic,

@@ -28,14 +28,15 @@ const Title = styled.h1`
 `;
 
 const Container = styled.div`
+  background-color: ${theme.light.bodyColor};
   padding-top: 2%;
   text-align: center;
-  div.slider-decorator-2,.slider-decorator-0,.slider-decorator-1{
-    display: none;
-  }
 `;
 
 const ContentContainer = styled.div`
+  div.slider-decorator-2,.slider-decorator-0,.slider-decorator-1{
+    display: none;
+  }
   display: flex;
   justify-content: space-around;
 `;
