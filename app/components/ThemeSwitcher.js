@@ -1,10 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Checkbox from 'material-ui/Checkbox';
 import Light from 'material-ui/svg-icons/image/wb-sunny';
 import Dark from 'material-ui/svg-icons/image/brightness-3';
+import { connect } from 'react-redux';
 
 import theme from '../utils/theme';
+import themeActions from '../actions/';
 
 const Container = styled.div`
   display: inline-flex;
@@ -17,10 +20,12 @@ class ThemeSwitcher extends React.Component {
     this.state = {
       checked: true,
     };
+    this.toggleSwitchChanged = this.toggleSwitchChanged.bind(this);
   }
 
   toggleSwitchChanged() {
     this.setState({ checked: !this.state.checked });
+    this.props.dispatch(themeActions(this.state.checked));
   }
 
   render() {
@@ -30,6 +35,7 @@ class ThemeSwitcher extends React.Component {
     return (
       <Container>
         <Checkbox
+          onCheck={this.toggleSwitchChanged}
           iconStyle={iconStyle}
           checkedIcon={<Dark />}
           uncheckedIcon={<Light />}
@@ -40,4 +46,12 @@ class ThemeSwitcher extends React.Component {
   }
 }
 
-export default ThemeSwitcher;
+ThemeSwitcher.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  theme: state.theme,
+});
+
+export default connect(mapStateToProps)(ThemeSwitcher);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Carousel from 'nuka-carousel';
+import { connect } from 'react-redux';
 
 import theme from '../utils/theme';
 import wallet from '../config/wallet/';
@@ -41,8 +42,8 @@ const ContentContainer = styled.div`
 `;
 
 class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       coins: wallet,
       totalPrice: 0,
@@ -88,4 +89,8 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  theme: state.theme,
+});
+
+export default connect(mapStateToProps)(Home);
