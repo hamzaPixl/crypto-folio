@@ -3,7 +3,7 @@ import React from 'react';
 import TRX from '../../assets/icons/coins/trx.svg';
 
 const coin = {
-  hodl: 291.104,
+  hodl: 439.955,
   name: 'TRON',
   symbol: 'TRX',
   icon: <img src={TRX} alt="TRX" />,
