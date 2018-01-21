@@ -4,6 +4,7 @@ import Carousel from 'nuka-carousel';
 
 import theme from '../utils/theme';
 import wallet from '../config/wallet/';
+import ThemeSwitcher from './ThemeSwitcher';
 import Trend from './Trend';
 
 import searchInformation from '../infrastructure/';
@@ -69,7 +70,7 @@ class Home extends Component {
   render() {
     return (
       <Container>
-        <Title>Cf<div>.</div></Title>
+        <Title>CRYPTO FOLIO<div>.</div></Title>
         <Trend />
         <ContentContainer>
           <Carousel
@@ -81,6 +82,7 @@ class Home extends Component {
             <ResumePortfolio totalPrice={this.state.totalPrice} />
           </Carousel>
         </ContentContainer>
+        <ThemeSwitcher />
       </Container>
     );
   }

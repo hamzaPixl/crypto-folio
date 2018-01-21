@@ -3,7 +3,7 @@ const basic = {
   fontWeight: 300,
   lineHeight: 2,
   letterSpacing: 0.01,
-  titleSize: 80,
+  titleSize: 40,
   dotColor: '#FF3266',
   changePositive: '#00c853',
   changeNegative: '#f44336',
@@ -27,4 +27,5 @@ const light = {
 export default {
   light,
   dark,
+  basic,
 };
