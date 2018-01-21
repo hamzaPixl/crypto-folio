@@ -14,7 +14,7 @@ import { ResumePortfolio, TableMarket, TablePortfolio } from './portfolio';
 const Title = styled.h1`
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 1%;
   font-family: ${theme.light.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
   color: ${theme.light.primaryColor};
