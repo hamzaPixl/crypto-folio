@@ -50,7 +50,6 @@ function TableMarket(props) {
         <tbody>
           {
             props.coins.map((coin) => {
-              const price = parseInt(coin.price_usd, 10);
               const change24 = coin.percent_change_24h / 100;
               const percentageClass = coin.percent_change_24h < 0 ? 'negative' : 'positive';
               return (
@@ -62,7 +61,7 @@ function TableMarket(props) {
                     </CoinContainer>
                   </td>
                   <td>
-                    <FormattedCurrency class={percentageClass} value={price} />
+                    <FormattedCurrency class={percentageClass} value={coin.price_usd} />
                   </td>
                   <td>
                     <FormattedPercentage value={change24} class={percentageClass} />
