@@ -20,14 +20,14 @@ const TableContainer = styled.table`
   text-align: left;
   border-spacing: 5px;
   border-radius: 4px;
-  font-family: ${theme.light.fontFamily}, sans-serif;
+  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: ${theme.light.primaryColor};
+  color: ${props => theme[props.theme].primaryColor};
   font-size: 15px;
-  line-height: ${theme.light.lineHeight}rem;
-  letter-spacing: ${theme.light.letterSpacing}rem;
+  line-height: ${props => theme[props.theme].lineHeight}rem;
+  letter-spacing: ${props => theme[props.theme].letterSpacing}rem;
   margin-bottom: 2rem;
-  background-color: ${theme.light.backgroundColor};
+  background-color: ${props => theme[props.theme].backgroundColor};
   td {
     padding-right: 15px;
   }
@@ -52,7 +52,7 @@ function TablePortfolio(props) {
   const totalPrice = props.coins.reduce((a, b) => (a + b.totalPrice), 0);
   return (
     <Container>
-      <TableContainer>
+      <TableContainer theme={props.theme}>
         <tbody>
           {
             props.coins.map((coin) => {
@@ -72,7 +72,7 @@ function TablePortfolio(props) {
                     <FormattedCoin value={coin.totalBTC} />
                   </td>
                   <td>
-                    <ProgressBar percent={percent} />
+                    <ProgressBar theme={props.theme} percent={percent} />
                   </td>
                 </tr>
               );
@@ -85,11 +85,13 @@ function TablePortfolio(props) {
 }
 
 TablePortfolio.propTypes = {
+  theme: PropTypes.string,
   coins: PropTypes.array,
 };
 
 TablePortfolio.defaultProps = {
   coins: [],
+  theme: 'light',
 };
 
 export default TablePortfolio;

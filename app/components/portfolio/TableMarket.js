@@ -18,14 +18,14 @@ const TableContainer = styled.table`
   text-align: left;
   height: 500px;
   border-radius: 4px;
-  font-family: ${theme.light.fontFamily}, sans-serif;
+  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: ${theme.light.primaryColor};
+  color: ${props => theme[props.theme].primaryColor};
   font-size: 15px;
-  line-height: ${theme.light.lineHeight}rem;
-  letter-spacing: ${theme.light.letterSpacing}rem;
+  line-height: ${props => theme[props.theme].lineHeight}rem;
+  letter-spacing: ${props => theme[props.theme].letterSpacing}rem;
   margin-bottom: 2rem;
-  background-color: ${theme.light.backgroundColor};
+  background-color: ${props => theme[props.theme].backgroundColor};
 `;
 
 const CoinContainer = styled.div`
@@ -46,7 +46,7 @@ const CoinName = styled.div`
 function TableMarket(props) {
   return (
     <Container>
-      <TableContainer>
+      <TableContainer theme={props.theme}>
         <tbody>
           {
             props.coins.map((coin) => {
@@ -78,10 +78,12 @@ function TableMarket(props) {
 
 TableMarket.propTypes = {
   coins: PropTypes.array,
+  theme: PropTypes.string,
 };
 
 TableMarket.defaultProps = {
   coins: [],
+  theme: 'light',
 };
 
 export default TableMarket;

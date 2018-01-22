@@ -50,6 +50,9 @@ ThemeSwitcher.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
+ThemeSwitcher.defaultProps = {
+};
+
 const mapStateToProps = state => ({
   theme: state.theme,
 });

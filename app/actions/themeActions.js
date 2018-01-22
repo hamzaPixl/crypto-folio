@@ -1,5 +1,5 @@
 function changeTheme(checked) {
-  const theme = checked ? 'light' : 'dark';
+  const theme = !checked ? 'light' : 'dark';
   return {
     type: 'CHANGE_THEME',
     theme,

@@ -11,9 +11,9 @@ const Container = styled.div`
   display: flex;
   padding-top: 5%;
   align-items: center;
-  color: ${theme.light.primaryColor};
+  color: ${props => theme[props.theme].primaryColor};
   flex-direction: column;
-  font-family: ${theme.light.fontFamily}, sans-serif;
+  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
 `;
 
 const PriceUSD = styled.div`
@@ -23,7 +23,7 @@ const PriceUSD = styled.div`
 
 function ResumePortfolio(props) {
   return (
-    <Container>
+    <Container theme={props.theme}>
       <ProgressCircle percent={100} />
       <PriceUSD>
         <FormattedCurrency value={props.totalPrice} />
@@ -34,10 +34,12 @@ function ResumePortfolio(props) {
 
 ResumePortfolio.propTypes = {
   totalPrice: PropTypes.number,
+  theme: PropTypes.string,
 };
 
 ResumePortfolio.defaultProps = {
   totalPrice: 0,
+  theme: 'light',
 };
 
 export default ResumePortfolio;

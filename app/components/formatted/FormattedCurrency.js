@@ -8,10 +8,10 @@ import theme from '../../utils/theme';
 
 const Container = styled.div`
   &.negative {
-    color: ${theme.light.changeNegative};
+    color: ${theme.basic.changeNegative};
   }
   &.positive {
-    color: ${theme.light.changePositive};
+    color: ${theme.basic.changePositive};
   }
 `;
 

@@ -11,24 +11,26 @@ import Trend from './Trend';
 import searchInformation from '../infrastructure/';
 import { ResumePortfolio, TableMarket, TablePortfolio } from './portfolio';
 
+import store from '../utils/store';
+
 const Title = styled.h1`
   display: flex;
   justify-content: center;
   margin-top: 1%;
-  font-family: ${theme.light.fontFamily}, sans-serif;
+  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: ${theme.light.primaryColor};
-  font-size: ${theme.light.titleSize}px;
-  line-height: ${theme.light.lineHeight}rem;
-  letter-spacing: ${theme.light.letterSpacing}rem;
+  color: ${props => theme[props.theme].primaryColor};
+  font-size: ${props => theme[props.theme].titleSize}px;
+  line-height: ${props => theme[props.theme].lineHeight}rem;
+  letter-spacing: ${props => theme[props.theme].letterSpacing}rem;
   text-align: center;
   > div {
-    color: ${theme.light.dotColor};
+    color: ${props => theme[props.theme].dotColor};
   }
 `;
 
 const Container = styled.div`
-  background-color: ${theme.light.bodyColor};
+  background-color: ${props => theme[props.theme].bodyColor};
   padding-top: 2%;
   text-align: center;
 `;
@@ -47,7 +49,10 @@ class Home extends Component {
     this.state = {
       coins: wallet,
       totalPrice: 0,
+      theme: 'light',
     };
+    this.subscribeTheme = this.subscribeTheme.bind(this);
+    this.subscribeTheme();
   }
 
   componentWillMount() {
@@ -61,6 +66,13 @@ class Home extends Component {
     );
   }
 
+  subscribeTheme() {
+    store.subscribe(() => {
+      const lastTheme = store.getState().themeReducer.pop().theme;
+      this.setState({ theme: lastTheme });
+    });
+  }
+
   fetchInformations() {
     return searchInformation(this.state.coins)
       .then((coins) => {
@@ -70,17 +82,20 @@ class Home extends Component {
 
   render() {
     return (
-      <Container>
-        <Title>CRYPTO FOLIO<div>.</div></Title>
+      <Container theme={this.state.theme}>
+        <Title theme={this.state.theme}>
+          CRYPTO FOLIO
+          <div>.</div>
+        </Title>
         <Trend />
-        <ContentContainer>
+        <ContentContainer theme={this.state.theme}>
           <Carousel
             dragging
             swiping
           >
-            <TableMarket coins={this.state.coins} />
-            <TablePortfolio coins={this.state.coins} />
-            <ResumePortfolio totalPrice={this.state.totalPrice} />
+            <TableMarket theme={this.state.theme} coins={this.state.coins} />
+            <TablePortfolio theme={this.state.theme} coins={this.state.coins} />
+            <ResumePortfolio theme={this.state.theme} totalPrice={this.state.totalPrice} />
           </Carousel>
         </ContentContainer>
         <ThemeSwitcher />

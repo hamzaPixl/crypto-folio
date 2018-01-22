@@ -12,12 +12,6 @@ const Bar = styled(LinearProgress)`
   }
 `;
 
-const barStyle = {
-  backgroundColor: theme.light.backgroundColor,
-  width: '100px',
-  height: '7px',
-  borderRadius: '4px',
-};
 
 class ProgressBar extends React.Component {
   constructor(props) {
@@ -46,9 +40,15 @@ class ProgressBar extends React.Component {
   }
 
   render() {
+    const barStyle = {
+      backgroundColor: theme[this.props.theme].backgroundColor,
+      width: '100px',
+      height: '7px',
+      borderRadius: '4px',
+    };
     return (
       <Bar
-        color={theme.light.dotColor}
+        color={theme.basic.dotColor}
         style={barStyle}
         mode="determinate"
         value={this.state.completed}
@@ -59,10 +59,12 @@ class ProgressBar extends React.Component {
 
 ProgressBar.propTypes = {
   percent: PropTypes.number,
+  theme: PropTypes.string,
 };
 
 ProgressBar.defaultProps = {
   percent: 0,
+  theme: 'light',
 };
 
 export default ProgressBar;

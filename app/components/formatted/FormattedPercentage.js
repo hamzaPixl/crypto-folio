@@ -13,10 +13,10 @@ const Container = styled.div`
   padding-right: 5px;
   justify-content: flex-end;
   &.negative {
-    color: ${theme.light.changeNegative};
+    color: ${theme.basic.changeNegative};
   }
   &.positive {
-    color: ${theme.light.changePositive};
+    color: ${theme.basic.changePositive};
   }
 `;
 
