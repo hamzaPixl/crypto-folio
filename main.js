@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const url = require('url');
+const path = require('path');
 
 let mainWindow;
 
@@ -9,6 +10,7 @@ function createWindow () {
     frame: false,
     width: 400,
     height: 850,
+    icon: path.join(__dirname, 'app/assets/icons/logo/24x24.png'),
     show: true,
   });
   mainWindow.loadURL(url.format({
