@@ -9,6 +9,7 @@
   "scripts": {
     "build": "react-scripts build",
     "start": "webpack-dev-server",
+    "electron": "electron main.js",
     "clean": "rimraf dist",
     "production": "cross-env npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./app/**/**.js",
@@ -41,6 +42,7 @@
   },
   "dependencies": {
     "cross-env": "5.1.2",
+    "electron": "^1.7.10",
     "material-design-icons": "^3.0.1",
     "material-ui": "^0.20.0",
     "nuka-carousel": "^3.0.1",

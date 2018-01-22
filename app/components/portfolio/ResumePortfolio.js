@@ -9,7 +9,7 @@ import theme from '../../utils/theme';
 
 const Container = styled.div`
   display: flex;
-  padding-top: 5%;
+  margin-top: 7%;
   align-items: center;
   color: ${props => theme[props.theme].primaryColor};
   flex-direction: column;
