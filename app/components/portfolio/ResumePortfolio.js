@@ -8,30 +8,32 @@ import { ProgressCircle } from '../progress';
 import theme from '../../utils/theme';
 
 const Container = styled.div`
-  display: flex;
   margin-top: 7%;
-  align-items: center;
+  display: inline-flex;
   color: ${props => theme[props.theme].primaryColor};
-  flex-direction: column;
   font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
 `;
 
 const Resume = styled.div`
-  padding-top: 30px;
+  padding-top: 5px;
+  padding-left: 10%;
+  text-align: left;
   font-size: 40px;
 `;
 
 const BTC = styled.div`
   padding-top: 5px;
-  font-size: 25px;
+  font-size: 15px;
 `;
 
 const ETH = styled.div`
   padding-top: 5px;
-  font-size: 25px;
+  font-size: 15px;
 `;
 
 const USD = styled.div`
+  font-size: 100px;
+  color: ${theme.basic.dotColor};
 `;
 
 function ResumePortfolio(props) {
