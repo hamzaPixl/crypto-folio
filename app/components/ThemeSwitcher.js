@@ -12,6 +12,7 @@ import themeActions from '../actions/';
 const Container = styled.div`
   display: inline-flex;
   padding-right: 2%;
+  padding-bottom: 2%;
 `;
 
 class ThemeSwitcher extends React.Component {
