@@ -6,6 +6,7 @@ import { FormattedNumber } from 'react-intl';
 function FormattedCoin(props) {
   return (
     <div>
+      {props.symbol}
       <FormattedNumber
         maximumFractionDigits={6}
         value={props.value}
@@ -16,10 +17,12 @@ function FormattedCoin(props) {
 
 FormattedCoin.propTypes = {
   value: PropTypes.number,
+  symbol: PropTypes.string,
 };
 
 FormattedCoin.defaultProps = {
   value: 0,
+  symbol: '',
 };
 
 export default FormattedCoin;

@@ -48,7 +48,9 @@ class Home extends Component {
     super(props);
     this.state = {
       coins: wallet,
-      totalPrice: 0,
+      totalUSD: 0,
+      totalBTC: 0,
+      totalETH: 0,
       theme: 'light',
     };
     this.subscribeTheme = this.subscribeTheme.bind(this);
@@ -76,7 +78,15 @@ class Home extends Component {
   fetchInformations() {
     return searchInformation(this.state.coins)
       .then((coins) => {
-        this.setState({ coins, totalPrice: coins.reduce((a, b) => (a + b.totalPrice), 0) });
+        const usd = coins.reduce((a, b) => (a + b.totalPrice), 0);
+        const btc = coins.reduce((a, b) => (a + b.totalBTC), 0);
+        const eth = btc / coins.find(c => c.symbol === 'ETH').price_btc;
+        this.setState({
+          coins,
+          totalUSD: usd,
+          totalBTC: btc,
+          totalETH: eth,
+        });
       });
   }
 
@@ -95,7 +105,12 @@ class Home extends Component {
           >
             <TableMarket theme={this.state.theme} coins={this.state.coins} />
             <TablePortfolio theme={this.state.theme} coins={this.state.coins} />
-            <ResumePortfolio theme={this.state.theme} totalPrice={this.state.totalPrice} />
+            <ResumePortfolio
+              theme={this.state.theme}
+              totalUSD={this.state.totalUSD}
+              totalBTC={this.state.totalBTC}
+              totalETH={this.state.totalETH}
+            />
           </Carousel>
         </ContentContainer>
         <ThemeSwitcher />
