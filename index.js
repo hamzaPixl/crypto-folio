@@ -10,14 +10,15 @@ function createWindow () {
     frame: false,
     width: 400,
     height: 850,
-    icon: path.join(__dirname, 'app/assets/icons/logo/24x24.png'),
+    icon: path.join(__dirname, 'src/assets/icons/logo/24x24.png'),
     show: true,
   });
-  mainWindow.loadURL(url.format({
-    pathname: 'localhost:8080',
-    protocol: 'http:',
+  const startUrl = process.env.ELECTRON_START_URL || url.format({
+    pathname: path.join(__dirname, '/../build/index.html'),
+    protocol: 'file:',
     slashes: true,
-  }));
+  });
+  mainWindow.loadURL(startUrl);
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
