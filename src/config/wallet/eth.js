@@ -3,7 +3,7 @@ import React from 'react';
 import ETH from '../../assets/icons/coins/eth.svg';
 
 const coin = {
-  hodl: 0.39217761,
+  hodl: 0.30223045,
   name: 'Ethereum',
   symbol: 'ETH',
   icon: <img src={ETH} alt="ETH" />,
