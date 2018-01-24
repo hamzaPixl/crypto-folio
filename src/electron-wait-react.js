@@ -18,6 +18,6 @@ const tryConnection = () => client.connect({ port }, () => {
 
 tryConnection();
 
-client.on('error', () => {
+client.on('error', (error) => {
   setTimeout(tryConnection, 1000);
 });

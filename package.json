@@ -33,10 +33,12 @@
     }
   },
   "dependencies": {
-    "electron-builder": "^19.24.1",
     "cross-env": "5.1.2",
     "electron": "^1.7.10",
+    "electron-builder": "^19.24.1",
+    "electron-reload": "^1.2.2",
     "file-loader": "^1.1.6",
+    "foreman": "^2.0.0",
     "material-design-icons": "^3.0.1",
     "material-ui": "^0.20.0",
     "nuka-carousel": "^3.0.1",
@@ -55,6 +57,7 @@
     "webpack": "^3.10.0"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
     "eslint": "4.13.0",
     "eslint-config-airbnb": "16.1.0",
     "eslint-loader": "1.9.0",

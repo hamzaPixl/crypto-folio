@@ -1,15 +1,15 @@
 const { app, BrowserWindow } = require('electron');
 const url = require('url');
 const path = require('path');
+require('electron-reload')(__dirname);
 
 let mainWindow;
-const port = process.env.PORT ? (process.env.PORT - 100) : 3000;
 
 function createWindow () {
   mainWindow = new BrowserWindow({
     transparent: true,
     frame: false,
-    width: 400,
+    width: 800,
     height: 850,
     icon: path.join(__dirname, 'src/assets/icons/logo/24x24.png'),
     show: true,
