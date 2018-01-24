@@ -3,7 +3,7 @@ import React from 'react';
 import XRP from '../../assets/icons/coins/xrp.svg';
 
 const coin = {
-  hodl: 100.649,
+  hodl: 165.334	,
   name: 'Ripple',
   symbol: 'XRP',
   icon: <img src={XRP} alt="XRP" />,
