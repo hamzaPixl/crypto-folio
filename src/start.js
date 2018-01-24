@@ -3,6 +3,7 @@ const url = require('url');
 const path = require('path');
 
 let mainWindow;
+const port = process.env.PORT ? (process.env.PORT - 100) : 3000;
 
 function createWindow () {
   mainWindow = new BrowserWindow({
