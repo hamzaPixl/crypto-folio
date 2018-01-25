@@ -66,10 +66,10 @@ function TablePortfolio(props) {
                     </CoinContainer>
                   </td>
                   <td>
-                    <FormattedCurrency value={coin.totalPrice} />
+                    <FormattedCoin value={coin.hodl} />
                   </td>
                   <td>
-                    <FormattedCoin value={coin.totalBTC} />
+                    <FormattedCurrency value={coin.totalPrice} />
                   </td>
                   <td>
                     <ProgressBar theme={props.theme} percent={percent} />
