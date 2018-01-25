@@ -2,8 +2,6 @@
 
 Virtual crypto wallet to see value of your crypto currencies.
 
-***
-
 ## Install 
 
   ###### Clone the repository
@@ -12,14 +10,10 @@ Virtual crypto wallet to see value of your crypto currencies.
   ###### Install differents packages
   ``npm i``
 
-***
-
 ## Start 
 
   ###### Start the electron app
   ``npm start``
-
-***
 
 ## Config your Wallet
 
@@ -53,7 +47,6 @@ Virtual crypto wallet to see value of your crypto currencies.
   export default coin;
   ```
 
-  ***
   
   ```javascript
   import xlm from './xlm';
