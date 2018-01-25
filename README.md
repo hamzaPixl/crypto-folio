@@ -35,6 +35,8 @@ Virtual crypto wallet to see value of your crypto currencies.
   
   > Add a file named `src/config/wallet/xlm.js` or whatever you want. The content is something like this. when **XXX** is how   much you hold in this cryptocurrency.
   
+  > Add the file into `src/config/wallet/index.js` and export it.
+  
   ```javascript
   import React from 'react';
 
@@ -51,8 +53,8 @@ Virtual crypto wallet to see value of your crypto currencies.
   export default coin;
   ```
 
-  > Add the file into `src/config/wallet/index.js` and export it.
-  
+  ***
+  
   ```javascript
   import xlm from './xlm';
 
