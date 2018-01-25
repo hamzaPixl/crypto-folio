@@ -23,11 +23,17 @@ Virtual crypto wallet to see value of your crypto currencies.
   
   > You want to track the crypto **Stellar**
   
+  #### Logo
+  
   > For some style you have to add a logo for you cryptocurrency. Add the file in `src/assets/icons/coins/xlm.svg`
   
   > We support different type of logo but **SVG** is better.
   
+  #### Information
+  
   > Add a file named `src/config/wallet/xlm.js` or whatever you want. The content is something like this. when **XXX** is how   much you hold in this cryptocurrency.
+  
+  > All keys are required.
   
   > Add the file into `src/config/wallet/index.js` and export it.
   
