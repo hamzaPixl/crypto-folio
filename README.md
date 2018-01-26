@@ -4,15 +4,15 @@ Virtual crypto wallet to see value of your crypto currencies.
 
 ## Install 
 
-  ###### Clone the repository
+  ### Clone the repository
   ``git clone https://github.com/hamzaPixl/crypto-folio.git``
 
-  ###### Install differents packages
+  ### Install differents packages
   ``npm i``
 
 ## Start 
 
-  ###### Start the electron app
+  ### Start the electron app
   ``npm start``
 
 ## Config your Wallet
@@ -23,13 +23,13 @@ Virtual crypto wallet to see value of your crypto currencies.
   
   > You want to track the crypto **Stellar**
   
-  #### Logo
+  ### Logo
   
   > For some style you have to add a logo for you cryptocurrency. Add the file in `src/assets/icons/coins/xlm.svg`
   
   > We support different type of logo but **SVG** is better.
   
-  #### Information
+  ### Information
   
   > Add a file named `src/config/wallet/xlm.js` or whatever you want. The content is something like this. when **XXX** is how   much you hold in this cryptocurrency.
   
