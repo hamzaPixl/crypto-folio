@@ -42,8 +42,8 @@ function ResumePortfolio(props) {
       <ProgressCircle percent={100} />
       <Resume>
         <USD><FormattedCurrency animate value={props.totalUSD} /></USD>
-        <BTC><FormattedCoin symbol="BTC" value={props.totalBTC} /></BTC>
-        <ETH><FormattedCoin symbol="ETH" value={props.totalETH} /></ETH>
+        <BTC><FormattedCoin symbol="฿" value={props.totalBTC} /></BTC>
+        <ETH><FormattedCoin symbol="Ξ" value={props.totalETH} /></ETH>
       </Resume>
     </Container>
   );
