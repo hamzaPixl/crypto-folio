@@ -7,15 +7,13 @@ import { FormattedCurrency, FormattedCoin } from '../formatted';
 import theme from '../../utils/theme';
 
 const Container = styled.div`
-  margin-top: 7%;
+  margin-top: 2%;
   display: inline-flex;
   color: ${props => theme[props.theme].primaryColor};
   font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
 `;
 
 const Resume = styled.div`
-  padding-top: 5px;
-  padding-left: 10%;
   text-align: center;
   font-size: 40px;
 `;
