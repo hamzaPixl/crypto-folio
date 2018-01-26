@@ -64,7 +64,7 @@ class Home extends Component {
   componentDidMount() {
     setInterval(
       () => this.fetchInformations(),
-      (1000 * 60 * 2),
+      (1000 * 60 * 5),
     );
   }
 
