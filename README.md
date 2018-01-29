@@ -4,7 +4,7 @@ Virtual crypto wallet to see value of your crypto currencies.
 
 ## Demo
 
-  ![Demo](https://imgur.com/a/a8Uc4)
+  ![Demo](https://i.imgur.com/vOXFH4a.gifv)
 
   ***
   
