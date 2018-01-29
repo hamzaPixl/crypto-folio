@@ -4,6 +4,10 @@ Virtual crypto wallet to see value of your crypto currencies.
 
 [https://hamzapixl.github.io/crypto-folio/](https://hamzapixl.github.io/crypto-folio/) 
   
+# Author
+
+Hamza Mounir    
+
 ## Demo
 
   ![](demo.gif)
@@ -74,10 +78,4 @@ Virtual crypto wallet to see value of your crypto currencies.
   ```
   
   ***
-  
-  
-# Author
-
-Hamza Mounir - hamza.pixelle@gmail.com    
-[Linkedin](https://www.linkedin.com/in/hamza-mounir-0a7bb6139/)   
-[Github](https://github.com/hamzaPixl)    
+ 
