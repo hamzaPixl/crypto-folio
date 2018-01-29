@@ -1,1 +1,27 @@
 theme: jekyll-theme-cayman
+
+title: CRYPTO FOLIO.
+
+avatar: https://avatars3.githubusercontent.com/u/20286003?s=460&v=4
+
+author :
+  name : Mounir Hamza
+
+social-network-links:
+  email: hamza.pixelle@gmail.com
+  facebook: https://www.facebook.com/profile.php?id=1104077828
+  github: hamzaPixl
+  instagram: https://www.instagram.com/hamza.pixl/
+  linkedin: https://www.linkedin.com/in/hamza-mounir-0a7bb6139/
+  twitter: pixlhamza
+
+share-links-active:
+  twitter: true
+  github: true
+  instagram: true
+  facebook: true
+  linkedin: true
+  
+read_time: true
+words_per_minute: 200
+search: true
