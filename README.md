@@ -2,7 +2,7 @@
 
 Virtual crypto wallet to see value of your crypto currencies.
 
-[](https://hamzapixl.github.io/crypto-folio/) 
+[https://hamzapixl.github.io/crypto-folio/](https://hamzapixl.github.io/crypto-folio/) 
   
 ## Demo
 
