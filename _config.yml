@@ -1,2 +1,9 @@
 theme: jekyll-theme-cayman
 title: CRYPTO FOLIO.
+footer-links:
+  email: hamza.pixelle@gmail.com
+  facebook: https://www.facebook.com/profile.php?id=1104077828
+  github: hamzaPixl
+  instagram: https://www.instagram.com/hamza.pixl/
+  linkedin: https://www.linkedin.com/in/hamza-mounir-0a7bb6139/
+  twitter: jekyllrb
