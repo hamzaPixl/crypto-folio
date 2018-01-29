@@ -1,5 +1,6 @@
 theme: jekyll-theme-cayman
 title: CRYPTO FOLIO.
+minimal_mistakes_skin: "dark"
 avatar: https://avatars3.githubusercontent.com/u/20286003?s=460&v=4
 footer-links:
   email: hamza.pixelle@gmail.com
