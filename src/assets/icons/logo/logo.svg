@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1280 1024" style="enable-background:new 0 0 1280 1024;" xml:space="preserve">
-<style type="text/css">
-	.st0{stroke:#000000;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;}
-	.st2{font-family:'Dense-Regular';}
-	.st3{font-size:667.2215px;}
-	.st4{font-size:443.2399px;}
-	.st5{fill:#FF3266;}
-</style>
-<path class="st0" d="M859.3,779.8H320.4c-11,0-20-9-20-20V220.9c0-11,9-20,20-20h538.9c11,0,20,9,20,20v538.9
-	C879.3,770.8,870.3,779.8,859.3,779.8z"/>
-<text transform="matrix(1.3165 0 0 1 361.6661 714.1277)" class="st1 st2 st3">C</text>
-<text transform="matrix(1.3661 0 0 1 624.9999 714.1278)" class="st1 st2 st4">f</text>
-<rect x="726.3" y="677.6" class="st5" width="36.6" height="36.6"/>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 873.38 906.35"><defs><style>.cls-1{stroke:#4d4d4d;stroke-linecap:round;stroke-miterlimit:10;stroke-width:5px;fill:url(#linear-gradient);}.cls-2{font-size:500px;}.cls-2,.cls-3{fill:#fff;font-family:Noteworthy-Light, Noteworthy;}.cls-3{font-size:552.01px;}</style><linearGradient id="linear-gradient" x1="219.56" y1="812.77" x2="653.82" y2="60.61" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ba5370"/><stop offset="0" stop-color="#bc5874" stop-opacity="0.97"/><stop offset="1" stop-color="#f4e2d8"/></linearGradient></defs><title>logo</title><circle class="cls-1" cx="436.69" cy="436.69" r="434.19"/><text class="cls-2" transform="translate(128.76 650.97) scale(1.14 1)">C</text><text class="cls-3" transform="translate(436.69 668.3) scale(1.16 1)">F</text></svg>
