@@ -21,7 +21,10 @@
     "dist": "npm run build && build",
     "postinstall": "install-app-deps",
     "precommit": "cross-env npm run lint && npm test",
-    "prepush": "cross-env npm run lint && npm test"
+    "prepush": "cross-env npm run lint && npm test",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icons/logo/mac/logo.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icons/logo/win/logo.ico --prune=true --out=release-builds --version-string.CompanyName=CF --version-string.FileDescription=CF --version-string.ProductName=\"Crypto folio.\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=src/assets/icons/logo/linux/logo.png --prune=true --out=release-builds"
   },
   "build": {
     "appId": "com.electron.cryptoFolio",
