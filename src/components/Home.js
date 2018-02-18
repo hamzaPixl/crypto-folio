@@ -78,9 +78,9 @@ class Home extends Component {
   fetchInformations() {
     return searchInformation(this.state.coins)
       .then((coins) => {
-        const usd = coins.reduce((a, b) => (a + b.totalPrice), 0);
         const btc = coins.reduce((a, b) => (a + b.totalBTC), 0);
         const eth = btc / coins.find(c => c.symbol === 'ETH').price_btc;
+        const usd = coins.reduce((a, b) => (a + b.totalPrice), 0);
         this.setState({
           coins,
           totalUSD: usd,
@@ -103,8 +103,14 @@ class Home extends Component {
             dragging
             swiping
           >
-            <TableMarket theme={this.state.theme} coins={this.state.coins} />
-            <TablePortfolio theme={this.state.theme} coins={this.state.coins} />
+            <TableMarket
+              theme={this.state.theme}
+              coins={this.state.coins}
+            />
+            <TablePortfolio
+              theme={this.state.theme}
+              coins={this.state.coins}
+            />
             <ResumePortfolio
               theme={this.state.theme}
               totalUSD={this.state.totalUSD}
