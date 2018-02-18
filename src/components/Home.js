@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Carousel from 'nuka-carousel';
 import { connect } from 'react-redux';
+import Sync from 'material-ui/svg-icons/notification/sync';
 
 import theme from '../utils/theme';
 import wallet from '../config/wallet/';
@@ -41,6 +42,20 @@ const ContentContainer = styled.div`
   }
   display: flex;
   justify-content: space-around;
+`;
+
+const Refresh = styled.a`
+  cursor: pointer;
+  fill: ${props => theme[props.theme].dotColor},
+  padding-left: 5px;
+`;
+
+const FooterContainer = styled.div`
+  width: 5%;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 47%;
 `;
 
 class Home extends Component {
@@ -119,7 +134,17 @@ class Home extends Component {
             />
           </Carousel>
         </ContentContainer>
-        <ThemeSwitcher />
+        <FooterContainer>
+          <ThemeSwitcher />
+          <Refresh
+            theme={this.state.theme}
+            onClick={() => this.fetchInformations()}
+          >
+            <Sync
+              color={theme.basic.dotColor}
+            />
+          </Refresh>
+        </FooterContainer>
       </Container>
     );
   }
