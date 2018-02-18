@@ -11,7 +11,7 @@ function createWindow () {
     frame: false,
     width: 800,
     height: 850,
-    icon: path.join(__dirname, 'src/assets/icons/logo/24x24.png'),
+    icon: path.join(__dirname, 'src/assets/icons/logo/linux/logo.png'),
     show: true,
   });
   const startUrl = process.env.ELECTRON_START_URL || url.format({

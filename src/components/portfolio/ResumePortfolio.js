@@ -4,31 +4,28 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { FormattedCurrency, FormattedCoin } from '../formatted';
-import { ProgressCircle } from '../progress';
 import theme from '../../utils/theme';
 
 const Container = styled.div`
-  margin-top: 7%;
+  margin-top: 2%;
   display: inline-flex;
   color: ${props => theme[props.theme].primaryColor};
   font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
 `;
 
 const Resume = styled.div`
-  padding-top: 5px;
-  padding-left: 10%;
-  text-align: left;
+  text-align: center;
   font-size: 40px;
 `;
 
 const BTC = styled.div`
   padding-top: 5px;
-  font-size: 15px;
+  font-size: 20px;
 `;
 
 const ETH = styled.div`
   padding-top: 5px;
-  font-size: 15px;
+  font-size: 20px;
 `;
 
 const USD = styled.div`
@@ -39,11 +36,10 @@ const USD = styled.div`
 function ResumePortfolio(props) {
   return (
     <Container theme={props.theme}>
-      <ProgressCircle percent={100} />
       <Resume>
-        <USD><FormattedCurrency animate value={props.totalUSD} /></USD>
-        <BTC><FormattedCoin symbol="BTC" value={props.totalBTC} /></BTC>
-        <ETH><FormattedCoin symbol="ETH" value={props.totalETH} /></ETH>
+        <USD><FormattedCurrency value={props.totalUSD} /></USD>
+        <BTC><FormattedCoin symbol="฿" value={props.totalBTC} /></BTC>
+        <ETH><FormattedCoin symbol="Ξ" value={props.totalETH} /></ETH>
       </Resume>
     </Container>
   );
