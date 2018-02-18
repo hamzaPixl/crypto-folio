@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Carousel from 'nuka-carousel';
 import { connect } from 'react-redux';
+import Sync from 'material-ui/svg-icons/notification/sync';
 
 import theme from '../utils/theme';
 import wallet from '../config/wallet/';
@@ -43,6 +44,20 @@ const ContentContainer = styled.div`
   justify-content: space-around;
 `;
 
+const Refresh = styled.a`
+  cursor: pointer;
+  fill: ${props => theme[props.theme].dotColor},
+  padding-left: 5px;
+`;
+
+const FooterContainer = styled.div`
+  width: 5%;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 47%;
+`;
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +79,7 @@ class Home extends Component {
   componentDidMount() {
     setInterval(
       () => this.fetchInformations(),
-      (1000 * 60 * 2),
+      (1000 * 60 * 5),
     );
   }
 
@@ -78,9 +93,9 @@ class Home extends Component {
   fetchInformations() {
     return searchInformation(this.state.coins)
       .then((coins) => {
-        const usd = coins.reduce((a, b) => (a + b.totalPrice), 0);
         const btc = coins.reduce((a, b) => (a + b.totalBTC), 0);
         const eth = btc / coins.find(c => c.symbol === 'ETH').price_btc;
+        const usd = coins.reduce((a, b) => (a + b.totalPrice), 0);
         this.setState({
           coins,
           totalUSD: usd,
@@ -103,8 +118,14 @@ class Home extends Component {
             dragging
             swiping
           >
-            <TableMarket theme={this.state.theme} coins={this.state.coins} />
-            <TablePortfolio theme={this.state.theme} coins={this.state.coins} />
+            <TableMarket
+              theme={this.state.theme}
+              coins={this.state.coins}
+            />
+            <TablePortfolio
+              theme={this.state.theme}
+              coins={this.state.coins}
+            />
             <ResumePortfolio
               theme={this.state.theme}
               totalUSD={this.state.totalUSD}
@@ -113,7 +134,17 @@ class Home extends Component {
             />
           </Carousel>
         </ContentContainer>
-        <ThemeSwitcher />
+        <FooterContainer>
+          <ThemeSwitcher />
+          <Refresh
+            theme={this.state.theme}
+            onClick={() => this.fetchInformations()}
+          >
+            <Sync
+              color={theme.basic.dotColor}
+            />
+          </Refresh>
+        </FooterContainer>
       </Container>
     );
   }
