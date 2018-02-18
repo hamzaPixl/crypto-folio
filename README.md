@@ -30,6 +30,18 @@ Hamza Mounir
       
   ``npm start``
 
+## Desktop 
+
+  **Build app**    
+      
+  ``npm run build``
+
+  **Run the packager**   
+      
+  ``npm run packager-mac``
+  ``npm run packager-win``
+  ``npm run packager-linux``
+  
 ## Config your Wallet
 
   > Before starting it go to `src/config/wallet/` and remove files correspondig to crypto that you don't want to track. If you want to add a new crypto for traking you have to create a new file corresponding to your crypto.
