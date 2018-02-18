@@ -22,9 +22,9 @@
     "postinstall": "install-app-deps",
     "precommit": "cross-env npm run lint && npm test",
     "prepush": "cross-env npm run lint && npm test",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icons/logo/mac/logo.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . crypto-folio --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icons/logo/win/logo.ico --prune=true --out=release-builds --version-string.CompanyName=CF --version-string.FileDescription=CF --version-string.ProductName=\"Crypto folio.\"",
-    "package-linux": "electron-packager . crypto-folio --overwrite --asar=true --platform=linux --arch=x64 --icon=src/assets/icons/logo/linux/logo.png --prune=true --out=release-builds"
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icons/logo/mac/logo.icns --prune=true --out=crypto-folio",
+    "package-win": "electron-packager . crypto-folio --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icons/logo/win/logo.ico --prune=true --out=crypto-foli --version-string.CompanyName=CF --version-string.FileDescription=CF --version-string.ProductName=\"Crypto folio.\"",
+    "package-linux": "electron-packager . crypto-folio --overwrite --asar=true --platform=linux --arch=x64 --icon=src/assets/icons/logo/linux/logo.png --prune=true --out=crypto-foli"
   },
   "build": {
     "appId": "io.pixl.crypto-folio",
