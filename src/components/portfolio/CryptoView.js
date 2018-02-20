@@ -20,17 +20,35 @@ const PriceUSD = styled.div``;
 
 const Percent = styled.div``;
 
+const SymbolContainer = styled.div``;
+
+const SearchContainer = styled.div``;
+
+const Search = styled.input``;
+
+const PriceContainer = styled.div``;
+
 function CryptoView(props) {
   const change24 = props.coin.percent_change_24h / 100;
   const percentageClass = props.coin.percent_change_24h < 0 ? 'negative' : 'positive';
   return (
     <Container>
-      <Symbol>{props.coin.symbol}</Symbol>
-      <Name>{props.coin.name}</Name>
+      <SearchContainer>
+        <Search />
+      </SearchContainer>
+
       <Icon>{props.coin.icon}</Icon>
-      <PriceBTC>{props.coin.price_btc}</PriceBTC>
-      <PriceUSD>{props.coin.price_usd}</PriceUSD>
-      <Percent>{change24}</Percent>
+
+      <SymbolContainer>
+        <Symbol>{props.coin.symbol}</Symbol>
+        <Name>{props.coin.name}</Name>
+      </SymbolContainer>
+
+      <PriceContainer>
+        <PriceBTC>{props.coin.price_btc}</PriceBTC>
+        <PriceUSD>{props.coin.price_usd}</PriceUSD>
+        <Percent>{change24}</Percent>
+      </PriceContainer>
     </Container>
   );
 }
