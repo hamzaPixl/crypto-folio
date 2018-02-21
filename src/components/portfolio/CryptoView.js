@@ -1,6 +1,6 @@
 /* eslint react/style-prop-object: 0 */
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import theme from '../../utils/theme';
@@ -28,46 +28,61 @@ const Search = styled.input``;
 
 const PriceContainer = styled.div``;
 
-function CryptoView(props) {
-  const change24 = props.coin.percent_change_24h / 100;
-  const percentageClass = props.coin.percent_change_24h < 0 ? 'negative' : 'positive';
-  return (
-    <Container>
-      <SearchContainer>
-        <Search />
-      </SearchContainer>
+class CryptoView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      coin: {
+        name: 'TRON',
+        symbol: 'TRX',
+        icon: 'T',
+        price_btc: '0.0823515',
+        price_usd: '949.314',
+        percent_change_24h: '-2',
+      },
+    };
+  }
 
-      <Icon>{props.coin.icon}</Icon>
+  fetchInformations(event, data) {
+    const url = `https://api.coinmarketcap.com/v1/ticker/${data}`;
+    fetch(url, { method: 'GET' })
+      .then((res) => {
 
-      <SymbolContainer>
-        <Symbol>{props.coin.symbol}</Symbol>
-        <Name>{props.coin.name}</Name>
-      </SymbolContainer>
+      });
+  }
 
-      <PriceContainer>
-        <PriceBTC>{props.coin.price_btc}</PriceBTC>
-        <PriceUSD>{props.coin.price_usd}</PriceUSD>
-        <Percent>{change24}</Percent>
-      </PriceContainer>
-    </Container>
-  );
+  render() {
+    const change24 = this.state.coin.percent_change_24h / 100;
+    const percentageClass = this.state.coin.percent_change_24h < 0 ? 'negative' : 'positive';
+    return (
+      <Container>
+        <SearchContainer>
+          <Search />
+        </SearchContainer>
+
+        <Icon>{this.state.coin.icon}</Icon>
+
+        <SymbolContainer>
+          <Symbol>{this.state.coin.symbol}</Symbol>
+          <Name>{this.state.coin.name}</Name>
+        </SymbolContainer>
+
+        <PriceContainer>
+          <PriceBTC>{this.state.coin.price_btc}</PriceBTC>
+          <PriceUSD>{this.state.coin.price_usd}</PriceUSD>
+          <Percent>{change24}</Percent>
+        </PriceContainer>
+      </Container>
+    );
+  }
 }
 
 CryptoView.propTypes = {
-  coin: PropTypes.object,
   theme: PropTypes.string,
 };
 
 CryptoView.defaultProps = {
   theme: 'light',
-  coin: {
-    name: 'TRON',
-    symbol: 'TRX',
-    icon: 'T',
-    price_btc: '0.0823515',
-    price_usd: '949.314',
-    percent_change_24h: '-2',
-  },
 };
 
 export default CryptoView;
