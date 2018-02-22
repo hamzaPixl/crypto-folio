@@ -10,7 +10,7 @@ import ThemeSwitcher from './ThemeSwitcher';
 import Trend from './Trend';
 
 import searchInformation from '../infrastructure/';
-import { ResumePortfolio, TableMarket, TablePortfolio, CryptoView } from './portfolio';
+import { ResumePortfolio, TableMarket, TablePortfolio } from './portfolio';
 
 import store from '../utils/store';
 
@@ -133,7 +133,6 @@ class Home extends Component {
               totalETH={this.state.totalETH}
             />
           </Carousel>
-          <CryptoView theme={this.state.theme} coin={{}} />
         </ContentContainer>
         <FooterContainer>
           <ThemeSwitcher />
