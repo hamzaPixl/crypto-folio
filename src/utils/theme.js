@@ -20,7 +20,7 @@ const dark = {
 const light = {
   bodyColor: '#ffffff',
   primaryColor: '#212121',
-  backgroundColor: '#c1d5e0',
+  backgroundColor: '#e0e0e0',
   ...basic,
 };
 
