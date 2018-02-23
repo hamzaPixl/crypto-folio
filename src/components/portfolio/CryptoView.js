@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { FormattedPercentage, FormattedCurrency, FormattedCoin } from '../formatted';
 import theme from '../../utils/theme';
-import { searchCoin } from '../../infrastructure';
+import { searchCoin, listCoins } from '../../infrastructure';
 
 const CardContainer = styled.div`
   border-radius: 4px;
@@ -83,7 +83,7 @@ const SearchContainer = styled.div`
   padding-bottom: 10%;
 `;
 
-const Search = styled.input`
+const Search = styled.select`
   text-align:center;
   font-size: 20px;
   background-color: ${props => (props.theme === 'dark' ? theme[props.theme].backgroundColor : null)};
@@ -96,22 +96,19 @@ class CryptoView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      coin: {
-        name: 'tron',
-        symbol: 'trx',
-        icon: 'https://coincodex.com/en/resources/images/admin/coins/tron.png',
-        price_btc: '0.0823515',
-        price_usd: '949.314',
-        percent_change_24h: '2',
-        market_cap_usd: '6633114589.0',
-        '24h_volume_usd': '90687700.0',
-      },
+      coin: {},
+      list: [],
     };
   }
 
   componentWillMount() {
-    searchCoin('ripple')
-      .then(coin => this.setState({ coin }));
+    listCoins()
+      .then((list) => {
+        const mapped = list.map(c => c.slug);
+        this.setState({ list: mapped });
+        searchCoin('ripple')
+          .then(coin => this.setState({ coin }));
+      });
   }
 
   render() {
@@ -121,9 +118,8 @@ class CryptoView extends Component {
       <Container theme={this.props.theme}>
         <SearchContainer>
           <Search
+            options={this.state.list}
             theme={this.props.theme}
-            placeholder="Search"
-            type="text"
           />
         </SearchContainer>
 
