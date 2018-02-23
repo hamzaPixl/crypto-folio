@@ -5,9 +5,7 @@ import styled from 'styled-components';
 
 import { FormattedPercentage, FormattedCurrency, FormattedCoin } from '../formatted';
 import theme from '../../utils/theme';
-
-const URL_API = 'https://api.coinmarketcap.com/v1/ticker/';
-const URL_ICON = 'https://coincodex.com/en/resources/images/admin/coins/';
+import { searchCoin } from '../../infrastructure';
 
 const CardContainer = styled.div`
   border-radius: 4px;
@@ -111,16 +109,9 @@ class CryptoView extends Component {
     };
   }
 
-  handleSearch(event, data) {
-    const url = `${URL_API}${data}`;
-    fetch(url, { method: 'GET' })
-      .then(res => res.json())
-      .then((res) => {
-        const coinFound = Array.isArray(res);
-        if (coinFound) {
-          this.state.coin = Object.assign({}, res[0], { icon: `${URL_ICON}${res[0].name}` });
-        }
-      });
+  componentWillMount() {
+    searchCoin('ripple')
+      .then(coin => this.setState({ coin }));
   }
 
   render() {
