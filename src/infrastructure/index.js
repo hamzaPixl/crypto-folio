@@ -1,3 +1,5 @@
 import searchInformation from './searchInformation';
+import searchCoin from './searchCoin';
+import listCoins from './listCoins';
 
-export default searchInformation;
+export { searchCoin, searchInformation, listCoins };

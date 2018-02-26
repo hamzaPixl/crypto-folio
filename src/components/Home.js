@@ -9,7 +9,7 @@ import wallet from '../config/wallet/';
 import ThemeSwitcher from './ThemeSwitcher';
 import Trend from './Trend';
 
-import searchInformation from '../infrastructure/';
+import { searchInformation } from '../infrastructure/';
 import { ResumePortfolio, TableMarket, TablePortfolio } from './portfolio';
 
 import store from '../utils/store';

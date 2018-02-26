@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import { FormattedCurrency, FormattedCoin } from '../formatted';
 import theme from '../../utils/theme';
 
+import CryptoView from './CryptoView';
+
 const Container = styled.div`
   margin-top: 2%;
   display: inline-flex;
@@ -40,6 +42,7 @@ function ResumePortfolio(props) {
         <USD><FormattedCurrency value={props.totalUSD} /></USD>
         <BTC><FormattedCoin symbol="฿" value={props.totalBTC} /></BTC>
         <ETH><FormattedCoin symbol="Ξ" value={props.totalETH} /></ETH>
+        <CryptoView theme={props.theme} />
       </Resume>
     </Container>
   );
