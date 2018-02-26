@@ -104,9 +104,9 @@ class CryptoView extends Component {
   componentWillMount() {
     listCoins()
       .then((list) => {
-        const mapped = list.map(c => c.slug);
+        const mapped = list.map(c => ({ value: c.slug, label: c.slug, id: c.id }));
         this.setState({ list: mapped });
-        searchCoin('ripple')
+        searchCoin(this.state.list[0])
           .then(coin => this.setState({ coin }));
       });
   }

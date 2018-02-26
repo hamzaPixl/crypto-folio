@@ -1,15 +1,10 @@
-function fetchInformationByCoin(name) {
-  const URL_ICON = 'http://coincodex.com/en/resources/images/admin/coins/';
-  const url = `https://api.coinmarketcap.com/v1/ticker/${name}/`;
-  return fetch(url, { method: 'GET' })
+function fetchInformationByCoin(coin) {
+  const URL_ICON = `https://files.coinmarketcap.com/static/img/coins/32x32/${coin.id}.png`;
+  const URL_INFO = `https://api.coinmarketcap.com/v1/ticker/${coin.value}/`;
+  return fetch(URL_INFO, { method: 'GET' })
     .then(res => res.json())
-    .then((res) => {
-      const coinFound = Array.isArray(res);
-      if (coinFound) {
-        return Object.assign({}, res[0], { icon: `${URL_ICON}${res[0].name}` });
-      }
-    })
-    .catch(({ code: 'ERROR_FETCH', message: `Error for coin ${name}.` }));
+    .then(res => Object.assign({}, res[0], { icon: URL_ICON }))
+    .catch(({ code: 'ERROR_FETCH', message: `Error for coin ${coin.value}.` }));
 }
 
 export default fetchInformationByCoin;
