@@ -128,9 +128,11 @@ class CryptoView extends Component {
             simpleValue
             clearable
             onChange={(value) => {
-              const tmp = this.state.list.find(c => c.value === value);
-              searchCoin(tmp)
-              .then(coin => this.setState({ coin, selectValue: value }));
+              if (value) {
+                const tmp = this.state.list.find(c => c.value === value);
+                searchCoin(tmp)
+                .then(coin => this.setState({ coin, selectValue: value }));
+              }
             }}
             searchable
           />
@@ -139,7 +141,6 @@ class CryptoView extends Component {
         <CardContainer theme={this.props.theme}>
 
           <CoinInformation>
-
 
             <SymbolContainer>
               <IconCointainer>
