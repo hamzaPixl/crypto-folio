@@ -1,5 +1,5 @@
 function fetchInformationByCoin(coin) {
-  const URL_ICON = `https://files.coinmarketcap.com/static/img/coins/32x32/${coin.id}.png`;
+  const URL_ICON = `https://files.coinmarketcap.com/static/img/coins/64x64/${coin.id}.png`;
   const URL_INFO = `https://api.coinmarketcap.com/v1/ticker/${coin.value}/`;
   return fetch(URL_INFO, { method: 'GET' })
     .then(res => res.json())

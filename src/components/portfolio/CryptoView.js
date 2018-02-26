@@ -2,6 +2,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 import { FormattedPercentage, FormattedCurrency, FormattedCoin } from '../formatted';
 import theme from '../../utils/theme';
@@ -58,6 +60,8 @@ const Volume = styled.div`
 
 const PriceUSD = styled.div``;
 
+const IconCointainer = styled.div``;
+
 const Percent = styled.div`
   font-size: 19px;
   > div {
@@ -66,11 +70,16 @@ const Percent = styled.div`
 `;
 
 const SymbolContainer = styled.div`
-  text-transform: uppercase;
   display: flex;
-  flex-direction: column;
   text-align: left;
   padding-bottom: 2%;
+`;
+
+const CoinNameCointainer = styled.div`
+  text-transform: uppercase;
+  flex-direction: column;
+  padding-left: 10%;
+  padding-top: 6%;
 `;
 
 const PriceContainer = styled.div`
@@ -83,21 +92,13 @@ const SearchContainer = styled.div`
   padding-bottom: 10%;
 `;
 
-const Search = styled.select`
-  text-align:center;
-  font-size: 20px;
-  background-color: ${props => (props.theme === 'dark' ? theme[props.theme].backgroundColor : null)};
-  color: ${props => theme[props.theme].dotColor};
-  border: 2px solid ${props => theme[props.theme].dotColor};
-  border-radius: 3px;
-`;
-
 class CryptoView extends Component {
   constructor(props) {
     super(props);
     this.state = {
       coin: {},
       list: [],
+      selectValue: 'bitcoin',
     };
   }
 
@@ -117,9 +118,21 @@ class CryptoView extends Component {
     return (
       <Container theme={this.props.theme}>
         <SearchContainer>
-          <Search
+          <Select
+            name="form-field-name"
             options={this.state.list}
-            theme={this.props.theme}
+            onBlurResetsInput={false}
+            onSelectResetsInput={false}
+            value={this.state.selectValue}
+            autoFocus
+            simpleValue
+            clearable
+            onChange={(value) => {
+              const tmp = this.state.list.find(c => c.value === value);
+              searchCoin(tmp)
+              .then(coin => this.setState({ coin, selectValue: value }));
+            }}
+            searchable
           />
         </SearchContainer>
 
@@ -127,9 +140,15 @@ class CryptoView extends Component {
 
           <CoinInformation>
 
+
             <SymbolContainer>
-              <Name>{this.state.coin.name}</Name>
-              <Symbol>{this.state.coin.symbol}</Symbol>
+              <IconCointainer>
+                <img src={this.state.coin.icon} alt="coin icon" />
+              </IconCointainer>
+              <CoinNameCointainer>
+                <Name>{this.state.coin.name}</Name>
+                <Symbol>{this.state.coin.symbol}</Symbol>
+              </CoinNameCointainer>
             </SymbolContainer>
 
             <PriceContainer>
