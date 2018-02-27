@@ -1,17 +1,9 @@
 /* eslint react/style-prop-object: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import LinearProgress from 'material-ui/LinearProgress';
-import styled from 'styled-components';
 
-import theme from '../../utils/theme';
-
-const Bar = styled(LinearProgress)`
-  > div {
-    border-radius: 4px;
-  }
-`;
-
+import theme from '../../../utils/theme';
+import { Bar } from './ProgressBar.style';
 
 class ProgressBar extends React.Component {
   constructor(props) {

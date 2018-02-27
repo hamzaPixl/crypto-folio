@@ -1,16 +1,9 @@
 /* eslint react/style-prop-object: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import CircularProgress from 'material-ui/CircularProgress';
-import styled from 'styled-components';
 
-import theme from '../../utils/theme';
-
-const Circle = styled(CircularProgress)`
-  > div {
-    border-radius: 4px;
-  }
-`;
+import theme from '../../../utils/theme';
+import { Circle } from './ProgressCircle.style';
 
 class ProgressCircle extends React.Component {
   constructor(props) {

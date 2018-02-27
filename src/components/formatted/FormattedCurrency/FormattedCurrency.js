@@ -2,18 +2,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedNumber } from 'react-intl';
-import styled from 'styled-components';
-
-import theme from '../../utils/theme';
-
-const Container = styled.div`
-  &.negative {
-    color: ${theme.basic.changeNegative};
-  }
-  &.positive {
-    color: ${theme.basic.changePositive};
-  }
-`;
+import { Container } from './FormattedCurrency.style';
 
 class FormattedCurrency extends React.Component {
   constructor(props) {

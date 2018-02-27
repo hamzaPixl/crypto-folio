@@ -2,23 +2,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedNumber } from 'react-intl';
-import styled from 'styled-components';
-
-import theme from '../../utils/theme';
-import ArrowUp from '../../assets/icons/arrow_up.svg';
-import ArrowDown from '../../assets/icons/arrow_down.svg';
-
-const Container = styled.div`
-  display: flex;
-  padding-right: 5px;
-  justify-content: flex-end;
-  &.negative {
-    color: ${theme.basic.changeNegative};
-  }
-  &.positive {
-    color: ${theme.basic.changePositive};
-  }
-`;
+import { ArrowDown, ArrowUp, Container } from './FormattedPercentage.style';
 
 function FormattedPercent(props) {
   const arrow = props.class === 'negative' ? ArrowDown : ArrowUp;
