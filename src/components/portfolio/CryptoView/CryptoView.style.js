@@ -52,8 +52,6 @@ export const Volume = styled.div`
 
 export const PriceUSD = styled.div``;
 
-export const IconCointainer = styled.div``;
-
 export const Percent = styled.div`
   font-size: 19px;
   > div {

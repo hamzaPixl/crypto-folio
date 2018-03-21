@@ -7,7 +7,7 @@ import 'react-select/dist/react-select.css';
 import { FormattedPercentage, FormattedCurrency, FormattedCoin } from '../../formatted';
 import { searchCoin, listCoins } from '../../../infrastructure';
 import { Capitalisation, CardContainer, CoinInformation,
-  CoinNameCointainer, Container, IconCointainer, MarketInformation,
+  CoinNameCointainer, Container, MarketInformation,
   Name, Percent, PriceBTC, PriceContainer, PriceUSD,
   SearchContainer, Symbol, SymbolContainer, Volume } from './CryptoView.style';
 
@@ -17,14 +17,14 @@ class CryptoView extends Component {
     this.state = {
       coin: {},
       list: [],
-      selectValue: 'bitcoin',
+      selectValue: 'Bitcoin',
     };
   }
 
   componentWillMount() {
     listCoins()
       .then((list) => {
-        const mapped = list.map(c => ({ value: c.slug, label: c.slug, id: c.id }));
+        const mapped = list.map(c => ({ value: c.id, label: c.name, id: c.id }));
         this.setState({ list: mapped });
         searchCoin(this.state.list[0])
           .then(coin => this.setState({ coin }));
@@ -62,9 +62,6 @@ class CryptoView extends Component {
           <CoinInformation>
 
             <SymbolContainer>
-              <IconCointainer>
-                <img src={this.state.coin.icon} alt="coin icon" />
-              </IconCointainer>
               <CoinNameCointainer>
                 <Name>{this.state.coin.name}</Name>
                 <Symbol>{this.state.coin.symbol}</Symbol>
