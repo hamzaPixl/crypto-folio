@@ -2,46 +2,9 @@
 /* eslint react/forbid-prop-types: 0 */
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
-import theme from '../../utils/theme';
 
-import { FormattedPercentage, FormattedCurrency } from '../formatted';
-
-const Container = styled.div`
-  padding-top: 2%;
-  display: flex;
-  justify-content: center;
-`;
-
-const TableContainer = styled.table`
-  width: 405px;
-  text-align: left;
-  height: 500px;
-  border-radius: 4px;
-  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  color: ${props => theme[props.theme].primaryColor};
-  font-size: 15px;
-  line-height: ${props => theme[props.theme].lineHeight}rem;
-  letter-spacing: ${props => theme[props.theme].letterSpacing}rem;
-  margin-bottom: 2rem;
-  background-color: ${props => theme[props.theme].backgroundColor};
-`;
-
-const CoinContainer = styled.div`
-  display: flex;
-  padding-left: 20px;
-  padding-top: 5px;
-`;
-
-const CoinLogo = styled.div`
-  padding-top: 3px;
-`;
-
-const CoinName = styled.div`
-  padding-left: 10px;
-  padding-top: 3px;
-`;
+import { FormattedPercentage, FormattedCurrency } from '../../formatted';
+import { CoinContainer, CoinLogo, CoinName, Container, TableContainer } from './TableMarket.style';
 
 function TableMarket(props) {
   return (
