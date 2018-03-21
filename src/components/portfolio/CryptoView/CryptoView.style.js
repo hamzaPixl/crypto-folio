@@ -68,7 +68,6 @@ export const SymbolContainer = styled.div`
 export const CoinNameCointainer = styled.div`
   text-transform: uppercase;
   flex-direction: column;
-  padding-left: 10%;
   padding-top: 6%;
 `;
 
