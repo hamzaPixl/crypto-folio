@@ -1,62 +1,15 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import Carousel from 'nuka-carousel';
 import { connect } from 'react-redux';
-import Sync from 'material-ui/svg-icons/notification/sync';
 
-import theme from '../utils/theme';
-import wallet from '../config/wallet/';
-import ThemeSwitcher from './ThemeSwitcher';
-import Trend from './Trend';
+import store from '../../utils/store';
+import ThemeSwitcher from '../ThemeSwitcher/';
+import wallet from '../../config/wallet/';
+import Trend from '../Trend';
 
-import searchInformation from '../infrastructure/';
-import { ResumePortfolio, TableMarket, TablePortfolio } from './portfolio';
-
-import store from '../utils/store';
-
-const Title = styled.h1`
-  display: flex;
-  justify-content: center;
-  margin-top: 1%;
-  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  color: ${props => theme[props.theme].primaryColor};
-  font-size: ${props => theme[props.theme].titleSize}px;
-  line-height: ${props => theme[props.theme].lineHeight}rem;
-  letter-spacing: ${props => theme[props.theme].letterSpacing}rem;
-  text-align: center;
-  > div {
-    color: ${props => theme[props.theme].dotColor};
-  }
-`;
-
-const Container = styled.div`
-  background-color: ${props => theme[props.theme].bodyColor};
-  padding-top: 2%;
-  text-align: center;
-`;
-
-const ContentContainer = styled.div`
-  div.slider-decorator-2,.slider-decorator-0,.slider-decorator-1{
-    display: none;
-  }
-  display: flex;
-  justify-content: space-around;
-`;
-
-const Refresh = styled.a`
-  cursor: pointer;
-  fill: ${props => theme[props.theme].dotColor},
-  padding-left: 5px;
-`;
-
-const FooterContainer = styled.div`
-  width: 5%;
-  padding-bottom: 5px;
-  display: flex;
-  justify-content: space-around;
-  margin: 0 47%;
-`;
+import { searchInformation } from '../../infrastructure/';
+import { ResumePortfolio, TableMarket, TablePortfolio } from '../portfolio';
+import { Container, ContentContainer, FooterContainer, Refresh, Sync, Title, theme } from './Home.style';
 
 class Home extends Component {
   constructor(props) {

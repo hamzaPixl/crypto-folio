@@ -2,18 +2,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FormattedNumber } from 'react-intl';
-import styled from 'styled-components';
-
-import theme from '../../utils/theme';
-
-const Container = styled.div`
-  &.negative {
-    color: ${theme.basic.changeNegative};
-  }
-  &.positive {
-    color: ${theme.basic.changePositive};
-  }
-`;
+import { Container } from './FormattedCurrency.style';
 
 class FormattedCurrency extends React.Component {
   constructor(props) {
@@ -43,10 +32,9 @@ class FormattedCurrency extends React.Component {
   render() {
     return (
       <Container className={this.props.class}>
+        {this.props.symbol}&nbsp;&nbsp;
         <FormattedNumber
           currency="USD"
-          currencyDisplay="symbol"
-          style="currency"
           maximumFractionDigits={2}
           value={this.props.animate ? this.state.completed : this.props.value}
         />
@@ -58,6 +46,7 @@ class FormattedCurrency extends React.Component {
 FormattedCurrency.propTypes = {
   value: PropTypes.number,
   class: PropTypes.string,
+  symbol: PropTypes.string,
   animate: PropTypes.bool,
 };
 
@@ -65,6 +54,7 @@ FormattedCurrency.defaultProps = {
   value: 0,
   class: '',
   animate: false,
+  symbol: '$',
 };
 
 export default FormattedCurrency;

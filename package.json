@@ -10,7 +10,7 @@
     "node": "8.9.2"
   },
   "scripts": {
-    "start": "nf start -p 3000",
+    "start": "nf start -p 3030",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -58,6 +58,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "4.2.2",
     "react-scripts": "^1.1.0",
+    "react-select": "^1.2.1",
     "react-sweet-progress": "^1.1.0",
     "react-trend": "^1.2.4",
     "redux": "^3.7.2",

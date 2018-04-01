@@ -1,18 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Checkbox from 'material-ui/Checkbox';
-import Light from 'material-ui/svg-icons/image/wb-sunny';
-import Dark from 'material-ui/svg-icons/image/brightness-3';
 import { connect } from 'react-redux';
 
-import theme from '../utils/theme';
-import themeActions from '../actions/';
-
-const Container = styled.div`
-  display: inline-flex;
-  padding-bottom: 2%;
-`;
+import theme from '../../utils/theme';
+import themeActions from '../../actions/';
+import { Checkbox, Container, Dark, Light } from './ThemeSwitcher.style';
 
 class ThemeSwitcher extends React.Component {
   constructor(props) {
