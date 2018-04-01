@@ -38,9 +38,11 @@ Hamza Mounir
 
   **Run the packager**   
       
-  ``npm run packager-mac``    
-  ``npm run packager-win``    
-  ``npm run packager-linux``    
+  Mac OS X : ``npm run packager-mac``    
+      
+  Windows  : ``npm run packager-win``    
+      
+  Linux    : ``npm run packager-linux``     
   
 ## Config your Wallet
 
