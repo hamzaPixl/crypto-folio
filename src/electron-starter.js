@@ -7,12 +7,12 @@ let mainWindow;
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    transparent: true,
-    frame: false,
-    width: 800,
-    height: 850,
+    transparent: false,
+    width: 600,
+    height: 800,
     icon: path.join(__dirname, 'src/assets/icons/logo/linux/logo.png'),
     show: true,
+    darkTheme: true,
   });
   const startUrl = process.env.ELECTRON_START_URL || url.format({
     pathname: path.join(__dirname, '/../build/index.html'),
