@@ -4,23 +4,23 @@ const basic = {
   lineHeight: 2,
   letterSpacing: 0.01,
   titleSize: 40,
-  dotColor: '#FF3266',
+  dotColor: '#64b5f6',
   changePositive: '#00c853',
   changeNegative: '#f44336',
-  progressCircle: '#FF3266',
+  progressCircle: '#64b5f6',
 };
 
 const dark = {
-  bodyColor: '#000000',
+  bodyColor: '#212121',
   primaryColor: '#ffffff',
-  backgroundColor: '#181819',
+  backgroundColor: '#484848',
   ...basic,
 };
 
 const light = {
-  bodyColor: '#ffffff',
+  bodyColor: '#fafafa',
   primaryColor: '#212121',
-  backgroundColor: '#e0e0e0',
+  backgroundColor: '#eceff1',
   ...basic,
 };
 

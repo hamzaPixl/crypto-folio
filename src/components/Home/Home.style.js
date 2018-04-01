@@ -24,6 +24,7 @@ export const Title = styled.h1`
 export const Container = styled.div`
   background-color: ${props => theme[props.theme].bodyColor};
   padding-top: 2%;
+  padding-bottom: 100%;
   text-align: center;
 `;
 
@@ -33,11 +34,13 @@ export const ContentContainer = styled.div`
   }
   display: flex;
   justify-content: space-around;
+  padding-bottom: 2%;
+  padding-top: 3%;
 `;
 
 export const Refresh = styled.a`
   cursor: pointer;
-  fill: ${props => theme[props.theme].dotColor},
+  fill: ${props => theme[props.theme].dotColor};
   padding-left: 5px;
 `;
 
