@@ -7,7 +7,8 @@ let mainWindow;
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    transparent: false,
+    transparent: true,
+    frame: false,
     width: 600,
     height: 800,
     icon: path.join(__dirname, 'src/assets/icons/logo/linux/logo.png'),
