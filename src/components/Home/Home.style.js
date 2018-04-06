@@ -9,20 +9,20 @@ export const Title = styled.h1`
   display: flex;
   justify-content: center;
   margin-top: 1%;
-  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
+  font-family: ${props => props.theme.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: ${props => theme[props.theme].primaryColor};
-  font-size: ${props => theme[props.theme].titleSize}px;
-  line-height: ${props => theme[props.theme].lineHeight}rem;
-  letter-spacing: ${props => theme[props.theme].letterSpacing}rem;
+  color: ${props => props.theme.primaryColor};
+  font-size: ${props => props.theme.titleSize}px;
+  line-height: ${props => props.theme.lineHeight}rem;
+  letter-spacing: ${props => props.theme.letterSpacing}rem;
   text-align: center;
   > div {
-    color: ${props => theme[props.theme].dotColor};
+    color: ${props => props.theme.dotColor};
   }
 `;
 
 export const Container = styled.div`
-  background-color: ${props => theme[props.theme].bodyColor};
+  background-color: ${props => props.theme.bodyColor};
   padding-top: 2%;
   padding-bottom: 100%;
   text-align: center;
@@ -40,7 +40,7 @@ export const ContentContainer = styled.div`
 
 export const Refresh = styled.a`
   cursor: pointer;
-  fill: ${props => theme[props.theme].dotColor};
+  fill: ${props => props.theme.dotColor};
   padding-left: 5px;
 `;
 

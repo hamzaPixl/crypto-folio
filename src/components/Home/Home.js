@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
-import { connect } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
 
-import store from '../../utils/store';
 import ThemeSwitcher from '../ThemeSwitcher/';
 import wallet from '../../config/wallet/';
 import Trend from '../Trend';
@@ -10,6 +9,8 @@ import Trend from '../Trend';
 import { searchInformation } from '../../infrastructure/';
 import { ResumePortfolio, TableMarket, TablePortfolio } from '../portfolio';
 import { Container, ContentContainer, FooterContainer, Refresh, Sync, Title, theme } from './Home.style';
+
+const { light, dark } = theme;
 
 class Home extends Component {
   constructor(props) {
@@ -19,10 +20,9 @@ class Home extends Component {
       totalUSD: 0,
       totalBTC: 0,
       totalETH: 0,
-      theme: 'light',
+      theme: light,
     };
-    this.subscribeTheme = this.subscribeTheme.bind(this);
-    this.subscribeTheme();
+    this.changeTheme = this.changeTheme.bind(this);
   }
 
   componentWillMount() {
@@ -34,13 +34,6 @@ class Home extends Component {
       () => this.fetchInformations(),
       (1000 * 60 * 5),
     );
-  }
-
-  subscribeTheme() {
-    store.subscribe(() => {
-      const lastTheme = store.getState().themeReducer.pop().theme;
-      this.setState({ theme: lastTheme });
-    });
   }
 
   fetchInformations() {
@@ -58,53 +51,41 @@ class Home extends Component {
       });
   }
 
+  changeTheme() {
+    if (this.state.theme.name === 'light') {
+      this.setState({ theme: dark });
+    } else {
+      this.setState({ theme: light });
+    }
+  }
+
   render() {
     return (
-      <Container theme={this.state.theme}>
-        <Title theme={this.state.theme}>
-          CRYPTO FOLIO
-          <div>.</div>
-        </Title>
-        <Trend />
-        <ContentContainer theme={this.state.theme}>
-          <Carousel
-            dragging
-            swiping
-          >
-            <TableMarket
-              theme={this.state.theme}
-              coins={this.state.coins}
-            />
-            <TablePortfolio
-              theme={this.state.theme}
-              coins={this.state.coins}
-            />
-            <ResumePortfolio
-              theme={this.state.theme}
-              totalUSD={this.state.totalUSD}
-              totalBTC={this.state.totalBTC}
-              totalETH={this.state.totalETH}
-            />
-          </Carousel>
-        </ContentContainer>
-        <FooterContainer>
-          <ThemeSwitcher />
-          <Refresh
-            theme={this.state.theme}
-            onClick={() => this.fetchInformations()}
-          >
-            <Sync
-              color={theme.basic.dotColor}
-            />
-          </Refresh>
-        </FooterContainer>
-      </Container>
+      <ThemeProvider theme={this.state.theme}>
+        <Container>
+          <Title> CRYPTO FOLIO <div>.</div> </Title>
+          <Trend />
+          <ContentContainer>
+            <Carousel dragging swiping >
+              <TableMarket coins={this.state.coins} />
+              <TablePortfolio coins={this.state.coins} />
+              <ResumePortfolio
+                totalUSD={this.state.totalUSD}
+                totalBTC={this.state.totalBTC}
+                totalETH={this.state.totalETH}
+              />
+            </Carousel>
+          </ContentContainer>
+          <FooterContainer>
+            <ThemeSwitcher onChangeTheme={this.changeTheme} />
+            <Refresh onClick={() => this.fetchInformations()} >
+              <Sync color={theme.basic.dotColor} />
+            </Refresh>
+          </FooterContainer>
+        </Container>
+      </ThemeProvider>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  theme: state.theme,
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home;

@@ -11,6 +11,7 @@ const basic = {
 };
 
 const dark = {
+  name: 'dark',
   bodyColor: '#212121',
   primaryColor: '#ffffff',
   backgroundColor: '#484848',
@@ -18,6 +19,7 @@ const dark = {
 };
 
 const light = {
+  name: 'light',
   bodyColor: '#fafafa',
   primaryColor: '#212121',
   backgroundColor: '#eceff1',

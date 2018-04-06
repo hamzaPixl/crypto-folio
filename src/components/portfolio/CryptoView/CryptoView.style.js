@@ -1,16 +1,15 @@
 import styled from 'styled-components';
-import theme from '../../../utils/theme';
 
 export const CardContainer = styled.div`
   border-radius: 4px;
-  background-color: ${props => theme[props.theme].backgroundColor};
+  background-color: ${props => props.theme.backgroundColor};
   box-shadow: 0 2px 4px 0 rgba(91,114,137,0.2);
   padding: 25px;
 `;
 
 export const Container = styled.div`
   font-size: 20px;
-  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
+  font-family: ${props => props.theme.fontFamily}, sans-serif;
 `;
 
 export const Name = styled.div`

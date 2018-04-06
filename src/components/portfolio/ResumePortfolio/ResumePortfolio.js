@@ -8,12 +8,12 @@ import CryptoView from '../CryptoView';
 
 function ResumePortfolio(props) {
   return (
-    <Container theme={props.theme}>
+    <Container>
       <Resume>
         <USD><FormattedCurrency value={props.totalUSD} /></USD>
         <BTC><FormattedCoin symbol="฿" value={props.totalBTC} /></BTC>
         <ETH><FormattedCoin symbol="Ξ" value={props.totalETH} /></ETH>
-        <CryptoView theme={props.theme} />
+        <CryptoView />
       </Resume>
     </Container>
   );
@@ -23,14 +23,12 @@ ResumePortfolio.propTypes = {
   totalUSD: PropTypes.number,
   totalBTC: PropTypes.number,
   totalETH: PropTypes.number,
-  theme: PropTypes.string,
 };
 
 ResumePortfolio.defaultProps = {
   totalUSD: 0,
   totalBTC: 0,
   totalETH: 0,
-  theme: 'light',
 };
 
 export default ResumePortfolio;

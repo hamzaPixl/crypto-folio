@@ -5,8 +5,8 @@ import theme from '../../../utils/theme';
 export const Container = styled.div`
   margin-top: 2%;
   display: inline-flex;
-  color: ${props => theme[props.theme].primaryColor};
-  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
+  color: ${props => props.theme.primaryColor};
+  font-family: ${props => props.theme.fontFamily}, sans-serif;
 `;
 
 export const Resume = styled.div`
