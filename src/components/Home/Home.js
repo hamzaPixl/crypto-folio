@@ -3,6 +3,7 @@ import Carousel from 'nuka-carousel';
 import { ThemeProvider } from 'styled-components';
 
 import ThemeSwitcher from '../ThemeSwitcher/';
+import News from '../news/';
 import wallet from '../../config/wallet/';
 import Trend from '../Trend';
 
@@ -82,6 +83,7 @@ class Home extends Component {
               <Sync color={theme.basic.dotColor} />
             </Refresh>
           </FooterContainer>
+          <News news="lorem ipsum" />
         </Container>
       </ThemeProvider>
     );

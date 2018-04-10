@@ -1,12 +1,10 @@
 import React from 'react';
-import { Banner, Container, Title } from './News.style';
+import { Container, Title } from './News.style';
 
-function News(props) {
-  console.log(props);
+function News() {
   return (
     <Container>
-      <Banner />
-      <Title />
+      <Title> omjdqspjdqsojdqsdqslkjd,qskodl,qsodnqsdmosqijdqsoilkd,sqkjdnsqdnsqjd </Title>
     </Container>
   );
 }
