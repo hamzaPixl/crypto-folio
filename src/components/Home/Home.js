@@ -7,7 +7,7 @@ import News from '../news/';
 import wallet from '../../config/wallet/';
 import Trend from '../Trend';
 
-import { searchInformation } from '../../infrastructure/';
+import { searchInformation, searchNews } from '../../infrastructure/';
 import { ResumePortfolio, TableMarket, TablePortfolio } from '../portfolio';
 import { Container, ContentContainer, FooterContainer, Refresh, Sync, Title, theme } from './Home.style';
 
@@ -22,6 +22,7 @@ class Home extends Component {
       totalBTC: 0,
       totalETH: 0,
       theme: light,
+      news: '',
     };
     this.changeTheme = this.changeTheme.bind(this);
   }
@@ -49,6 +50,7 @@ class Home extends Component {
           totalBTC: btc,
           totalETH: eth,
         });
+        searchNews().then(news => this.setState({ news }));
       });
   }
 
@@ -83,7 +85,7 @@ class Home extends Component {
               <Sync color={theme.basic.dotColor} />
             </Refresh>
           </FooterContainer>
-          <News news="lorem ipsum" />
+          <News news={this.state.news} />
         </Container>
       </ThemeProvider>
     );
