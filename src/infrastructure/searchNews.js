@@ -1,11 +1,15 @@
-const Parser = require('rss-parser');
+const rss = require('rss-to-json');
 
-const parser = new Parser();
-
-async function fetchNews() {
+function fetchNews() {
   const urlRss = 'https://cointelegraph.com/rss';
-  const feed = await parser.parseURL(urlRss);
-  return feed.items.map(i => i.title).join(' - ');
+  return new Promise((resolve, reject) => {
+    return rss.load(urlRss, (err, res) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(res.items.map(i => i.title).join(' - '));
+    });
+  });
 }
 
 export default fetchNews;
