@@ -11,6 +11,7 @@ function createWindow () {
     frame: true,
     width: 600,
     height: 850,
+    webPreferences: { webSecurity: false },
     icon: path.join(__dirname, 'src/assets/icons/logo/linux/logo.png'),
     show: true,
     darkTheme: true,
