@@ -4,20 +4,22 @@ const basic = {
   lineHeight: 2,
   letterSpacing: 0.01,
   titleSize: 40,
-  dotColor: '#64b5f6',
-  changePositive: '#00c853',
-  changeNegative: '#f44336',
+  dotColor: '#ff3d00',
+  changePositive: '#00c300',
+  changeNegative: '#df2029',
   progressCircle: '#64b5f6',
 };
 
 const dark = {
-  bodyColor: '#212121',
+  name: 'dark',
+  bodyColor: '#131418',
   primaryColor: '#ffffff',
-  backgroundColor: '#484848',
+  backgroundColor: '#2c3e50',
   ...basic,
 };
 
 const light = {
+  name: 'light',
   bodyColor: '#fafafa',
   primaryColor: '#212121',
   backgroundColor: '#eceff1',

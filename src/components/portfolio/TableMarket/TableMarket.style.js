@@ -1,7 +1,6 @@
 /* eslint react/no-did-mount-set-state: 0 */
 /* eslint react/forbid-prop-types: 0 */
 import styled from 'styled-components';
-import theme from '../../../utils/theme';
 
 export const Container = styled.div`
   padding-top: 2%;
@@ -14,14 +13,14 @@ export const TableContainer = styled.table`
   text-align: left;
   height: 500px;
   border-radius: 4px;
-  font-family: ${props => theme[props.theme].fontFamily}, sans-serif;
+  font-family: ${props => props.theme.fontFamily}, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: ${props => theme[props.theme].primaryColor};
+  color: ${props => props.theme.primaryColor};
   font-size: 15px;
-  line-height: ${props => theme[props.theme].lineHeight}rem;
-  letter-spacing: ${props => theme[props.theme].letterSpacing}rem;
+  line-height: ${props => props.theme.lineHeight}rem;
+  letter-spacing: ${props => props.theme.letterSpacing}rem;
   margin-bottom: 2rem;
-  background-color: ${props => theme[props.theme].backgroundColor};
+  background-color: ${props => props.theme.backgroundColor};
 `;
 
 export const CoinContainer = styled.div`

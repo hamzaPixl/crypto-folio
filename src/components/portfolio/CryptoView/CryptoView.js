@@ -1,5 +1,4 @@
 /* eslint react/style-prop-object: 0 */
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
@@ -35,7 +34,7 @@ class CryptoView extends Component {
     const change24 = this.state.coin.percent_change_24h / 100;
     const percentageClass = this.state.coin.percent_change_24h < 0 ? 'negative' : 'positive';
     return (
-      <Container theme={this.props.theme}>
+      <Container>
         <SearchContainer>
           <Select
             name="form-field-name"
@@ -57,7 +56,7 @@ class CryptoView extends Component {
           />
         </SearchContainer>
 
-        <CardContainer theme={this.props.theme}>
+        <CardContainer>
 
           <CoinInformation>
 
@@ -110,13 +109,5 @@ class CryptoView extends Component {
     );
   }
 }
-
-CryptoView.propTypes = {
-  theme: PropTypes.string,
-};
-
-CryptoView.defaultProps = {
-  theme: 'light',
-};
 
 export default CryptoView;
