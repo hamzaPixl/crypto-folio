@@ -14,15 +14,15 @@ export const Container = styled.div`
 
 const slideshow = keyframes`
     from {
-        margin-left: -100%;
+        margin-left: 100%;
     }
     to {
-        margin-left: 100%;
+        margin-left: -1000%;
     }
 `;
 
 export const Title = styled.div`
     padding-top: 7px;
     white-space: nowrap;
-    animation: ${slideshow} 10s linear infinite;
+    animation: ${slideshow} 100s linear infinite;
 `;
