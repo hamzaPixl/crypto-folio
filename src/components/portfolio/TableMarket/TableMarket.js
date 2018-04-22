@@ -9,7 +9,7 @@ import { CoinContainer, CoinLogo, CoinName, Container, TableContainer } from './
 function TableMarket(props) {
   return (
     <Container>
-      <TableContainer theme={props.theme}>
+      <TableContainer>
         <tbody>
           {
             props.coins.map((coin) => {
@@ -41,12 +41,10 @@ function TableMarket(props) {
 
 TableMarket.propTypes = {
   coins: PropTypes.array,
-  theme: PropTypes.string,
 };
 
 TableMarket.defaultProps = {
   coins: [],
-  theme: 'light',
 };
 
 export default TableMarket;

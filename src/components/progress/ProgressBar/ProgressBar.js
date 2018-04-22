@@ -33,7 +33,7 @@ class ProgressBar extends React.Component {
 
   render() {
     const barStyle = {
-      backgroundColor: theme[this.props.theme].backgroundColor,
+      backgroundColor: this.props.theme.backgroundColor,
       width: '100px',
       height: '7px',
       borderRadius: '4px',

@@ -44,7 +44,7 @@ class FormattedCurrency extends React.Component {
 }
 
 FormattedCurrency.propTypes = {
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   class: PropTypes.string,
   symbol: PropTypes.string,
   animate: PropTypes.bool,

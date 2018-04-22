@@ -11,7 +11,7 @@ function TablePortfolio(props) {
   const totalPrice = props.coins.reduce((a, b) => (a + b.totalPrice), 0);
   return (
     <Container>
-      <TableContainer theme={props.theme}>
+      <TableContainer>
         <tbody>
           {
             props.coins.map((coin) => {
@@ -31,7 +31,7 @@ function TablePortfolio(props) {
                     <FormattedCurrency value={coin.totalPrice} />
                   </td>
                   <td>
-                    <ProgressBar theme={props.theme} percent={percent} />
+                    <ProgressBar percent={percent} />
                   </td>
                 </tr>
               );
@@ -44,13 +44,11 @@ function TablePortfolio(props) {
 }
 
 TablePortfolio.propTypes = {
-  theme: PropTypes.string,
   coins: PropTypes.array,
 };
 
 TablePortfolio.defaultProps = {
   coins: [],
-  theme: 'light',
 };
 
 export default TablePortfolio;
