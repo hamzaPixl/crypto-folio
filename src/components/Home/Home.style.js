@@ -24,7 +24,7 @@ export const Title = styled.h1`
 export const Container = styled.div`
   background-color: ${props => props.theme.bodyColor};
   padding-top: 2%;
-  padding-bottom: 100%;
+  padding-bottom: 2%;
   text-align: center;
 `;
 
