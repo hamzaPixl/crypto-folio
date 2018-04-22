@@ -16,7 +16,7 @@ function FormattedCoin(props) {
 }
 
 FormattedCoin.propTypes = {
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   symbol: PropTypes.string,
 };
 
