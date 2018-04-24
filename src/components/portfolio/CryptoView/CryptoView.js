@@ -33,40 +33,35 @@ class CryptoView extends Component {
   render() {
     const change24 = this.state.coin.percent_change_24h / 100;
     const percentageClass = this.state.coin.percent_change_24h < 0 ? 'negative' : 'positive';
+
     return (
       <Container>
         <SearchContainer>
           <Select
-            name="form-field-name"
+            name="select-crypto"
             options={this.state.list}
-            onBlurResetsInput={false}
-            onSelectResetsInput={false}
             value={this.state.selectValue}
             autoFocus
             simpleValue
-            clearable
-            onChange={(value) => {
-              if (value) {
-                const tmp = this.state.list.find(c => c.value === value);
-                searchCoin(tmp)
-                .then(coin => this.setState({ coin, selectValue: value }));
-              }
-            }}
             searchable
+            onChange={(value) => {
+              if (!value) {
+                return;
+              }
+              const tmp = this.state.list.find(c => c.value === value);
+              searchCoin(tmp)
+              .then(coin => this.setState({ coin, selectValue: value }));
+            }}
           />
         </SearchContainer>
-
         <CardContainer>
-
           <CoinInformation>
-
             <SymbolContainer>
               <CoinNameCointainer>
                 <Name>{this.state.coin.name}</Name>
                 <Symbol>{this.state.coin.symbol}</Symbol>
               </CoinNameCointainer>
             </SymbolContainer>
-
             <PriceContainer>
               <PriceBTC>
                 <FormattedCoin
@@ -87,7 +82,6 @@ class CryptoView extends Component {
                 />
               </Percent>
             </PriceContainer>
-
           </CoinInformation>
           <MarketInformation>
             <Capitalisation>
@@ -103,7 +97,6 @@ class CryptoView extends Component {
               />
             </Volume>
           </MarketInformation>
-
         </CardContainer>
       </Container>
     );
