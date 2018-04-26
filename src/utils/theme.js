@@ -4,10 +4,10 @@ const basic = {
   lineHeight: 2,
   letterSpacing: 0.01,
   titleSize: 40,
-  dotColor: '#ff3d00',
+  mainColor: '#ff3d00',
   changePositive: '#00c300',
-  changeNegative: '#df2029',
-  progressCircle: '#64b5f6',
+  changeNegative: '#F44336',
+  progressCircle: '#69F0AE',
 };
 
 const dark = {

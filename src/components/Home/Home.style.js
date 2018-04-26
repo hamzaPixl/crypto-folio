@@ -17,7 +17,7 @@ export const Title = styled.h1`
   letter-spacing: ${props => props.theme.letterSpacing}rem;
   text-align: center;
   > div {
-    color: ${props => props.theme.dotColor};
+    color: ${props => props.theme.mainColor};
   }
 `;
 
@@ -40,7 +40,7 @@ export const ContentContainer = styled.div`
 
 export const Refresh = styled.a`
   cursor: pointer;
-  fill: ${props => props.theme.dotColor};
+  fill: ${props => props.theme.mainColor};
   padding-left: 5px;
 `;
 

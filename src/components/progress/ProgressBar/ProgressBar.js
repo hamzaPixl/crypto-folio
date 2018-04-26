@@ -40,7 +40,7 @@ class ProgressBar extends React.Component {
     };
     return (
       <Bar
-        color={theme.basic.dotColor}
+        color={theme.basic.mainColor}
         style={barStyle}
         mode="determinate"
         value={this.state.completed}

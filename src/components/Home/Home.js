@@ -82,7 +82,7 @@ class Home extends Component {
           <FooterContainer>
             <ThemeSwitcher onChangeTheme={this.changeTheme} />
             <Refresh onClick={() => this.fetchInformations()} >
-              <Sync color={theme.basic.dotColor} />
+              <Sync color={theme.basic.mainColor} />
             </Refresh>
           </FooterContainer>
           <News news={this.state.news} />

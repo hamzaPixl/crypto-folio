@@ -6,8 +6,9 @@ import { Checkbox, Container, Dark, Light } from './ThemeSwitcher.style';
 
 function ThemeSwitcher(props) {
   const iconStyle = {
-    fill: theme.basic.dotColor,
+    fill: theme.basic.mainColor,
   };
+
   return (
     <Container>
       <Checkbox

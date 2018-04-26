@@ -26,5 +26,5 @@ export const ETH = styled.div`
 
 export const USD = styled.div`
   font-size: 100px;
-  color: ${theme.basic.dotColor};
+  color: ${theme.basic.mainColor};
 `;
