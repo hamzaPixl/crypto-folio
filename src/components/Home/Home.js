@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
 import { ThemeProvider } from 'styled-components';
 
-import ThemeSwitcher from '../ThemeSwitcher/';
+import ThemeSwitcher from '../themeSwitcher/';
 import News from '../news/';
 import wallet from '../../config/wallet/';
 import Trend from '../Trend';
@@ -23,12 +23,14 @@ class Home extends Component {
       totalETH: 0,
       theme: light,
       news: '',
+      introShow: true,
     };
     this.changeTheme = this.changeTheme.bind(this);
   }
 
   componentWillMount() {
     this.fetchInformations();
+    setTimeout(() => this.setState({ introShow: false }), 4 * 1000);
   }
 
   componentDidMount() {
@@ -62,21 +64,30 @@ class Home extends Component {
     }
   }
 
-  render() {
+  renderIntro() {
+    return (
+      <ThemeProvider theme={this.state.theme}>
+        <Container intro>
+          <Title> CRYPTO FOLIO <div>.</div> </Title>
+          <Trend />
+        </Container>
+      </ThemeProvider>
+    );
+  }
+
+  renderFolio() {
     return (
       <ThemeProvider theme={this.state.theme}>
         <Container>
-          <Title> CRYPTO FOLIO <div>.</div> </Title>
-          <Trend />
           <ContentContainer>
             <Carousel dragging swiping >
-              <TableMarket coins={this.state.coins} />
-              <TablePortfolio coins={this.state.coins} />
               <ResumePortfolio
                 totalUSD={this.state.totalUSD}
                 totalBTC={this.state.totalBTC}
                 totalETH={this.state.totalETH}
               />
+              <TableMarket coins={this.state.coins} />
+              <TablePortfolio coins={this.state.coins} />
             </Carousel>
           </ContentContainer>
           <FooterContainer>
@@ -89,6 +100,10 @@ class Home extends Component {
         </Container>
       </ThemeProvider>
     );
+  }
+
+  render() {
+    return this.state.introShow ? this.renderIntro() : this.renderFolio();
   }
 }
 
