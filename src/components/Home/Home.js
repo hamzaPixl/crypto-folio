@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Carousel from 'nuka-carousel';
 import { ThemeProvider } from 'styled-components';
 
 import ThemeSwitcher from '../themeSwitcher/';
@@ -8,8 +7,8 @@ import wallet from '../../config/wallet/';
 import Trend from '../Trend';
 
 import { searchInformation, searchNews } from '../../infrastructure/';
-import { ResumePortfolio, TableMarket, TablePortfolio } from '../portfolio';
-import { Container, ContentContainer, FooterContainer, Refresh, Sync, Title, theme } from './Home.style';
+import { ResumePortfolio } from '../portfolio';
+import { TitleDot, TitleContainer, IntroContainer, Container, ContentContainer, FooterContainer, Refresh, Sync, Title, theme } from './Home.style';
 
 const { light, dark } = theme;
 
@@ -67,10 +66,13 @@ class Home extends Component {
   renderIntro() {
     return (
       <ThemeProvider theme={this.state.theme}>
-        <Container intro>
-          <Title> CRYPTO FOLIO <div>.</div> </Title>
+        <IntroContainer>
+          <TitleContainer>
+            <Title>CRYPTO FOLIO</Title>
+            <TitleDot>.</TitleDot>
+          </TitleContainer>
           <Trend />
-        </Container>
+        </IntroContainer>
       </ThemeProvider>
     );
   }
@@ -80,15 +82,11 @@ class Home extends Component {
       <ThemeProvider theme={this.state.theme}>
         <Container>
           <ContentContainer>
-            <Carousel dragging swiping >
-              <ResumePortfolio
-                totalUSD={this.state.totalUSD}
-                totalBTC={this.state.totalBTC}
-                totalETH={this.state.totalETH}
-              />
-              <TableMarket coins={this.state.coins} />
-              <TablePortfolio coins={this.state.coins} />
-            </Carousel>
+            <ResumePortfolio
+              totalUSD={this.state.totalUSD}
+              totalBTC={this.state.totalBTC}
+              totalETH={this.state.totalETH}
+            />
           </ContentContainer>
           <FooterContainer>
             <ThemeSwitcher onChangeTheme={this.changeTheme} />

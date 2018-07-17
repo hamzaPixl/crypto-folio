@@ -5,28 +5,34 @@ import theme from '../../utils/theme';
 
 export { Sync, theme };
 
-export const Title = styled.h1`
+export const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 1%;
+  text-align: center;
+`;
+
+export const Title = styled.h1`
   font-family: ${props => props.theme.fontFamily}, sans-serif;
-  -webkit-font-smoothing: antialiased;
   color: ${props => props.theme.primaryColor};
   font-size: ${props => props.theme.titleSize}px;
   line-height: ${props => props.theme.lineHeight}rem;
   letter-spacing: ${props => props.theme.letterSpacing}rem;
-  text-align: center;
-  > div {
-    color: ${props => props.theme.mainColor};
-  }
+`;
+
+export const TitleDot = styled.h1`
+  color: ${props => props.theme.mainColor};
+`;
+
+export const IntroContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const Container = styled.div`
   background-color: ${props => props.theme.bodyColor};
-  padding-top: ${props => (props.intro ? '45%' : '2%')};
+  padding-top: 2%;
   text-align: center;
-  width: 600px;
-  height: 850px;
 `;
 
 export const ContentContainer = styled.div`
@@ -35,8 +41,7 @@ export const ContentContainer = styled.div`
   }
   display: flex;
   justify-content: space-around;
-  padding-bottom: 2%;
-  padding-top: 3%;
+  padding-top: 10%;
 `;
 
 export const Refresh = styled.a`
@@ -51,4 +56,6 @@ export const FooterContainer = styled.div`
   display: flex;
   justify-content: space-around;
   margin: 0 47%;
+  position: absolute;
+  bottom: 0;
 `;
