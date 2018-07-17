@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Sync from 'material-ui/svg-icons/notification/sync';
 
-import theme from '../../utils/theme';
+import theme from '../utils/theme';
 
 export { Sync, theme };
 

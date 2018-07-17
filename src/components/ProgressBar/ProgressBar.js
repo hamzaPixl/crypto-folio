@@ -2,15 +2,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import theme from '../../../utils/theme';
-import { Circle } from './ProgressCircle.style';
+import theme from '../../utils/theme';
+import { Bar } from './ProgressBar.style';
 
-class ProgressCircle extends React.Component {
+class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       completed: 0,
-      percent: props.percent,
     };
   }
 
@@ -23,8 +22,8 @@ class ProgressCircle extends React.Component {
   }
 
   progress(completed) {
-    if (completed > this.state.percent) {
-      this.setState({ completed: this.state.percent });
+    if (completed > this.props.percent) {
+      this.setState({ completed: this.props.percent });
     } else {
       this.setState({ completed });
       const diff = Math.random() * 10;
@@ -33,11 +32,17 @@ class ProgressCircle extends React.Component {
   }
 
   render() {
+    const barStyle = {
+      backgroundColor: this.props.theme.backgroundColor,
+      width: '100px',
+      height: '7px',
+      borderRadius: '4px',
+    };
+
     return (
-      <Circle
-        size={180}
+      <Bar
         color={theme.basic.mainColor}
-        thickness={5}
+        style={barStyle}
         mode="determinate"
         value={this.state.completed}
       />
@@ -45,12 +50,14 @@ class ProgressCircle extends React.Component {
   }
 }
 
-ProgressCircle.propTypes = {
+ProgressBar.propTypes = {
   percent: PropTypes.number,
+  theme: PropTypes.string,
 };
 
-ProgressCircle.defaultProps = {
+ProgressBar.defaultProps = {
   percent: 0,
+  theme: 'light',
 };
 
-export default ProgressCircle;
+export default ProgressBar;

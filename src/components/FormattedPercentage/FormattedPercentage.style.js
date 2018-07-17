@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import theme from '../../../utils/theme';
+import theme from '../../utils/theme';
 
-import arropUp from '../../../assets/icons/arrow_up.svg';
-import arrowDown from '../../../assets/icons/arrow_down.svg';
+import arropUp from '../../assets/icons/arrow_up.svg';
+import arrowDown from '../../assets/icons/arrow_down.svg';
 
 export const ArrowUp = arropUp;
 

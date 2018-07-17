@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { FormattedCurrency, FormattedCoin } from '../../formatted';
+import { FormattedCurrency, FormattedCoin } from '../../components';
 import { Container, BTC, ETH, Resume, USD } from './ResumePortfolio.style';
 import CryptoView from '../CryptoView';
 

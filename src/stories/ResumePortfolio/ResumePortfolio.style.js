@@ -1,6 +1,6 @@
 /* eslint react/style-prop-object: 0 */
 import styled from 'styled-components';
-import theme from '../../../utils/theme';
+import theme from '../../utils/theme';
 
 export const Container = styled.div`
   margin-top: 2%;

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import ThemeSwitcher from '../themeSwitcher/';
-import News from '../news/';
-import wallet from '../../config/wallet/';
-import Trend from '../Trend';
+import { Trend, ThemeSwitcher, News } from '../components';
 
-import { searchInformation, searchNews } from '../../infrastructure/';
-import { ResumePortfolio } from '../portfolio';
+import ResumePortfolio from './ResumePortfolio';
+
+import wallet from '../config/wallet';
+import { searchInformation, searchNews } from '../infrastructure';
 import { TitleDot, TitleContainer, IntroContainer, Container, ContentContainer, FooterContainer, Refresh, Sync, Title, theme } from './Home.style';
 
 const { light, dark } = theme;

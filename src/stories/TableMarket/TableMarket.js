@@ -3,19 +3,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { FormattedCurrency, FormattedCoin } from '../../formatted';
-import { ProgressBar } from '../../progress';
-import { CoinContainer, CoinLogo, CoinName, Container, TableContainer } from './TablePortfolio.style';
+import { FormattedPercentage, FormattedCurrency } from '../../components';
+import { CoinContainer, CoinLogo, CoinName, Container, TableContainer } from './TableMarket.style';
 
-function TablePortfolio(props) {
-  const totalPrice = props.coins.reduce((a, b) => (a + b.totalPrice), 0);
+function TableMarket(props) {
   return (
     <Container>
       <TableContainer>
         <tbody>
           {
             props.coins.map((coin) => {
-              const percent = Math.round((coin.totalPrice / totalPrice) * 100);
+              const change24 = coin.percent_change_24h / 100;
+              const percentageClass = coin.percent_change_24h < 0 ? 'negative' : 'positive';
               return (
                 <tr key={coin.name}>
                   <td>
@@ -25,13 +24,10 @@ function TablePortfolio(props) {
                     </CoinContainer>
                   </td>
                   <td>
-                    <FormattedCoin value={coin.hodl} />
+                    <FormattedCurrency class={percentageClass} value={coin.price_usd} />
                   </td>
                   <td>
-                    <FormattedCurrency value={coin.totalPrice} />
-                  </td>
-                  <td>
-                    <ProgressBar percent={percent} />
+                    <FormattedPercentage value={change24} class={percentageClass} />
                   </td>
                 </tr>
               );
@@ -43,12 +39,12 @@ function TablePortfolio(props) {
   );
 }
 
-TablePortfolio.propTypes = {
+TableMarket.propTypes = {
   coins: PropTypes.array,
 };
 
-TablePortfolio.defaultProps = {
+TableMarket.defaultProps = {
   coins: [],
 };
 
-export default TablePortfolio;
+export default TableMarket;

@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
-import { FormattedPercentage, FormattedCurrency, FormattedCoin } from '../../formatted';
-import { searchCoin, listCoins } from '../../../infrastructure';
+import { FormattedPercentage, FormattedCurrency, FormattedCoin } from '../../components';
+import { searchCoin, listCoins } from '../../infrastructure';
 import { Capitalisation, CardContainer, CoinInformation,
   CoinNameCointainer, Container, MarketInformation,
   Name, Percent, PriceBTC, PriceContainer, PriceUSD,
