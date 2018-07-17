@@ -9,8 +9,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     transparent: false,
     frame: true,
-    width: 600,
-    height: 850,
+    width: 1000,
+    height: 600,
     webPreferences: { webSecurity: false },
     icon: path.join(__dirname, 'src/assets/icons/logo/linux/logo.png'),
     show: true,

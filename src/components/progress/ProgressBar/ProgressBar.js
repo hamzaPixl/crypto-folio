@@ -38,6 +38,7 @@ class ProgressBar extends React.Component {
       height: '7px',
       borderRadius: '4px',
     };
+
     return (
       <Bar
         color={theme.basic.mainColor}
