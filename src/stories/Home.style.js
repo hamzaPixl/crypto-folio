@@ -31,8 +31,7 @@ export const IntroContainer = styled.div`
 
 export const Container = styled.div`
   background-color: ${props => props.theme.bodyColor};
-  padding-top: 2%;
-  text-align: center;
+  height: 100%;
 `;
 
 export const ContentContainer = styled.div`

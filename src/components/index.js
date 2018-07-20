@@ -6,6 +6,7 @@ import FormattedCurrency from './FormattedCurrency';
 import FormattedPercentage from './FormattedPercentage';
 import ProgressBar from './ProgressBar';
 import ProgressCircle from './ProgressCircle';
+import NavigationBar from './NavigationBar';
 
 export {
   News,
@@ -16,4 +17,5 @@ export {
   FormattedPercentage,
   ProgressBar,
   ProgressCircle,
+  NavigationBar,
 };

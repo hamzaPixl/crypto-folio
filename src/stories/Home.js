@@ -1,34 +1,31 @@
 import React, { Component } from 'react';
-import { ThemeProvider } from 'styled-components';
 
-import { Trend, ThemeSwitcher, News } from '../components';
+import user from '../config/user.json';
+import { News, NavigationBar } from '../components';
 
 import ResumePortfolio from './ResumePortfolio';
+import TableMarket from './TableMarket';
+import TablePortfolio from './TablePortfolio';
+import CryptoView from './CryptoView';
 
-import wallet from '../config/wallet';
 import { searchInformation, searchNews } from '../infrastructure';
 import { TitleDot, TitleContainer, IntroContainer, Container, ContentContainer, FooterContainer, Refresh, Sync, Title, theme } from './Home.style';
-
-const { light, dark } = theme;
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      coins: wallet,
+      user,
+      coins: user.coins,
       totalUSD: 0,
       totalBTC: 0,
       totalETH: 0,
-      theme: light,
       news: '',
-      introShow: true,
     };
-    this.changeTheme = this.changeTheme.bind(this);
   }
 
   componentWillMount() {
     this.fetchInformations();
-    setTimeout(() => this.setState({ introShow: false }), 4 * 1000);
   }
 
   componentDidMount() {
@@ -54,53 +51,18 @@ class Home extends Component {
       });
   }
 
-  changeTheme() {
-    if (this.state.theme.name === 'light') {
-      this.setState({ theme: dark });
-    } else {
-      this.setState({ theme: light });
-    }
-  }
-
-  renderIntro() {
-    return (
-      <ThemeProvider theme={this.state.theme}>
-        <IntroContainer>
-          <TitleContainer>
-            <Title>CRYPTO FOLIO</Title>
-            <TitleDot>.</TitleDot>
-          </TitleContainer>
-          <Trend />
-        </IntroContainer>
-      </ThemeProvider>
-    );
-  }
-
-  renderFolio() {
-    return (
-      <ThemeProvider theme={this.state.theme}>
-        <Container>
-          <ContentContainer>
-            <ResumePortfolio
-              totalUSD={this.state.totalUSD}
-              totalBTC={this.state.totalBTC}
-              totalETH={this.state.totalETH}
-            />
-          </ContentContainer>
-          <FooterContainer>
-            <ThemeSwitcher onChangeTheme={this.changeTheme} />
-            <Refresh onClick={() => this.fetchInformations()} >
-              <Sync color={theme.basic.mainColor} />
-            </Refresh>
-          </FooterContainer>
-          <News news={this.state.news} />
-        </Container>
-      </ThemeProvider>
-    );
-  }
-
   render() {
-    return this.state.introShow ? this.renderIntro() : this.renderFolio();
+    return (
+      <Container>
+        <NavigationBar />
+        <ResumePortfolio
+          totalUSD={this.state.totalUSD}
+          totalBTC={this.state.totalBTC}
+          totalETH={this.state.totalETH}
+        />
+        <News news={this.state.news} />
+      </Container>
+    );
   }
 }
 

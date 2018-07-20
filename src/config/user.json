@@ -1,0 +1,49 @@
+{
+  "lastName": "Hamza",
+  "firstName": "Mounir",
+  "currency": "USD",
+  "language": "en",
+  "coins": [
+    {
+      "name": "Ethereum",
+      "label": "ethereum",
+      "symbol": "ETH",
+      "hodl": 0.30223045,
+      "link": "https://api.coinmarketcap.com/v1/ticker/ethereum/"
+    },
+    {
+      "name": "Verge",
+      "label": "verge",
+      "symbol": "XVG",
+      "hodl": 591.95718,
+      "link": "https://api.coinmarketcap.com/v1/ticker/verge/"
+    },
+    {
+      "name": "Tron",
+      "label": "tron",
+      "symbol": "TRX",
+      "hodl": 439.955,
+      "link": "https://api.coinmarketcap.com/v1/ticker/tron/"
+    },
+    {
+      "name": "Ripple",
+      "label": "ripple",
+      "symbol": "XRP",
+      "hodl": 165.334,
+      "link": "https://api.coinmarketcap.com/v1/ticker/ethereum/"
+    },
+    {
+      "name": "Stellar",
+      "label": "stellar",
+      "symbol": "XLM",
+      "hodl": 100.879,
+      "link": "https://api.coinmarketcap.com/v1/ticker/stellar/"
+    }, {
+      "name": "Cindicator",
+      "label": "cindicator",
+      "symbol": "CND",
+      "hodl": 70.846,
+      "link": "https://api.coinmarketcap.com/v1/ticker/cindicator/"
+    }
+  ]
+}

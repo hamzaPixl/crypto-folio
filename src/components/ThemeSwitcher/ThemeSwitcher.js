@@ -1,29 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Container, On } from './ThemeSwitcher.style';
 
-import theme from '../../utils/theme';
-import { Checkbox, Container, Dark, Light } from './ThemeSwitcher.style';
-
-function ThemeSwitcher(props) {
-  const iconStyle = {
-    fill: theme.basic.mainColor,
-  };
-
+function ThemeSwitcher() {
   return (
     <Container>
-      <Checkbox
-        onCheck={() => props.onChangeTheme()}
-        iconStyle={iconStyle}
-        checkedIcon={<Dark />}
-        uncheckedIcon={<Light />}
-        label=""
-      />
+      <div>
+        <On />
+      </div>
     </Container>
   );
 }
-
-ThemeSwitcher.propTypes = {
-  onChangeTheme: PropTypes.func.isRequired,
-};
 
 export default ThemeSwitcher;
